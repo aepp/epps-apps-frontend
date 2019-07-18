@@ -21,6 +21,7 @@ export default function Abstract() {
         </Grid>
         <Grid item xs={12}>
           <div className={classes.about}>
+            <Typography>Web-Developer</Typography>
           </div>
         </Grid>
       </Grid>

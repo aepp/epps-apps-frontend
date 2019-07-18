@@ -1,8 +1,9 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Grid, Typography, useTheme} from '@material-ui/core';
-import {CanvasRenderer} from 'react-radial-progress-indicator/dist/renderers';
+import {RadialProgress} from 'react-radial-progress-indicator';
 import styles from './styles';
+import {lighten} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(styles);
 
@@ -18,16 +19,22 @@ export const Languages = () => {
             {'Deutsch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <CanvasRenderer
+            <RadialProgress
               backgroundTransparent
-              proportion={1}
-              ringFgColour={theme.palette.secondary.main}
-              ringThickness={0.2}
-              segmentGap={2}
+              duration={5000}
+              height="100%"
+              ringFgColour={theme.designScheme.languageCircleColor}
+              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
+              ringThickness={0.05}
               segmented
-              showIntermediateProgress
-              steps={10}/>
-            {/*<Typography className={classes.languageLevelText}>10/10</Typography>*/}
+              showIntermediateProgress={false}
+              startStep={0}
+              step={10}
+              steps={10}
+              text={() => {}}
+              width="100%"
+            />
+            <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
           </div>
         </Grid>
         <Grid item xs={4} className={classes.skillContainer}>
@@ -35,16 +42,22 @@ export const Languages = () => {
             {'Russisch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <CanvasRenderer
+            <RadialProgress
               backgroundTransparent
-              proportion={1}
-              ringFgColour={theme.palette.secondary.main}
-              ringThickness={0.2}
-              segmentGap={2}
+              duration={5000}
+              height="100%"
+              ringFgColour={theme.designScheme.languageCircleColor}
+              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
+              ringThickness={0.05}
               segmented
-              showIntermediateProgress
-              steps={10}/>
-            {/*<Typography className={classes.languageLevelText}>10/10</Typography>*/}
+              showIntermediateProgress={false}
+              startStep={0}
+              step={10}
+              steps={10}
+              text={() => {}}
+              width="100%"
+            />
+            <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
           </div>
         </Grid>
         <Grid item xs={4} className={classes.skillContainer}>
@@ -52,16 +65,22 @@ export const Languages = () => {
             {'Englisch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <CanvasRenderer
+            <RadialProgress
               backgroundTransparent
-              proportion={.7}
-              ringFgColour={theme.palette.secondary.main}
-              ringThickness={0.2}
-              segmentGap={2}
+              duration={5000}
+              height="100%"
+              ringFgColour={theme.designScheme.languageCircleColor}
+              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
+              ringThickness={0.05}
               segmented
-              showIntermediateProgress
-              steps={10}/>
-            {/*<Typography className={classes.languageLevelText}>7/10</Typography>*/}
+              showIntermediateProgress={false}
+              startStep={0}
+              step={7}
+              steps={10}
+              text={() => {}}
+              width="100%"
+            />
+            <Typography className={classes.languageLevelText} component={'div'}>gute<br/>Kenntnisse</Typography>
           </div>
         </Grid>
       </Grid>

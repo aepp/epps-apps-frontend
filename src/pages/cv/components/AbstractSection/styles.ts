@@ -18,7 +18,7 @@ export const abstractStyles = (theme: Theme) => createStyles({
     width: 200,
     height: 200,
     borderRadius: '50%',
-    borderColor: theme.palette.primary.main,
+    borderColor: theme.designScheme.avatarBorderColor,
     borderWidth: 10,
     borderStyle: 'solid'
   },
@@ -27,7 +27,9 @@ export const abstractStyles = (theme: Theme) => createStyles({
     textAlign: 'center',
     fontWeight: theme.typography.fontWeightBold
   },
-  about: {}
+  about: {
+    textAlign: 'center'
+  }
 });
 
 export default abstractStyles;

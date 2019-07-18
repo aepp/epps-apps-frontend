@@ -6,8 +6,10 @@ export const educationStyles = (theme: Theme) => createStyles({
   },
   circleProgressContainer: {
     position: 'relative',
-    height: 'auto',
-    width: 'auto'
+    height: 120,
+    width: 120,
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   languageLevelText: {
     position: 'absolute',
@@ -17,8 +19,8 @@ export const educationStyles = (theme: Theme) => createStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontWeight: theme.typography.fontWeightBold,
-    color: theme.palette.secondary.main
+    textAlign: 'center',
+    fontSize: theme.typography.fontSize
   },
   skillContainer: {
     flexDirection: 'column',
@@ -27,7 +29,9 @@ export const educationStyles = (theme: Theme) => createStyles({
   },
   languageLabel: {
     marginBottom: theme.spacing(),
-    textAlign: 'center'
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontWeight: theme.typography.fontWeightBold
   }
 });
 

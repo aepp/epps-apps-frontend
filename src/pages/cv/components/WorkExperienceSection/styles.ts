@@ -1,35 +1,10 @@
 import {createStyles, Theme} from '@material-ui/core';
+import chronicStyles from "../chronicStyles";
 
-const dotDim = 10;
 export const educationStyles = (theme: Theme) => createStyles({
+  ...chronicStyles(theme),
   root: {
     flexGrow: 1
-  },
-  periodContainer: {
-    display: 'flex'
-  },
-  border: {
-    height: '100%',
-    width: 2,
-    backgroundColor: theme.palette.text.primary
-  },
-  dot: {
-    position: 'relative',
-    width: dotDim,
-    height: dotDim,
-    background: theme.palette.common.black,
-    left: -(dotDim / 2) - 1,
-    top: dotDim / 2,
-    borderRadius: '50%'
-  },
-  currentDot: {
-    background: theme.palette.error.main
-  },
-  period: {
-    fontWeight: theme.typography.fontWeightBold,
-    display: 'flex',
-    flexDirection: 'column',
-    paddingTop: theme.spacing(),
   },
   description: {
     paddingTop: theme.spacing(),
@@ -49,8 +24,7 @@ export const educationStyles = (theme: Theme) => createStyles({
     display: 'flex',
     flexWrap: 'wrap',
     paddingLeft: theme.spacing(6),
-    fontSize: theme.typography.fontSize * .75,
-    fontStyle: 'italic'
+    fontSize: theme.typography.fontSize
   },
   skill: {
     margin: theme.spacing(.5)

@@ -5,7 +5,7 @@ export const educationStyles = (theme: Theme) => createStyles({
     flexGrow: 1
   },
   progress: {
-    width: '80%'
+    width: '70%'
   },
   skillContainer: {
     display: 'flex',
@@ -14,7 +14,7 @@ export const educationStyles = (theme: Theme) => createStyles({
     justifyContent: 'center'
   },
   skillLabel:{
-    width: '20%',
+    width: '30%',
     display: 'flex',
     justifyContent: 'flex-end',
     paddingRight: theme.spacing()

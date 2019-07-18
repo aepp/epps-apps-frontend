@@ -1,54 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import {ThemeProvider} from '@material-ui/styles';
-import CVPage from './pages/cv';
-import theme from './theme';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import ReactPDF, {Page, Document, PDFViewer} from '@react-pdf/renderer';
-import html2canvas from 'html2canvas';
+import {createHashHistory} from 'history';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import {routerMiddleware, ConnectedRouter} from 'connected-react-router';
+import {appReducer} from './reducers';
 
+import './static/fonts/raleway.css';
+import './static/fonts/life-savers.css';
+import './static/fonts/monoton.css';
+import './static/fonts/press-start-2p.css';
+import './static/fonts/sigmar-one.css';
 
-const App = (
-  <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-    <CssBaseline/>
-    <CVPage/>
-  </ThemeProvider>
-);
+const history = createHashHistory();
+
+const createStoreWithMiddleware = applyMiddleware(
+  routerMiddleware(history),
+  thunk
+)(createStore);
+export let store = createStoreWithMiddleware(appReducer(history));
+
 ReactDOM.render(
-  App,
-  document.getElementById('root'),
-  () => {
-    html2canvas(document.body).then(function (canvas) {
-      // Export the canvas to its data URI representation
-      // let base64image = canvas.toDataURL('image/png');
-      document.body.appendChild(canvas);
-      // Open the image in a new window
-      // window.open(base64image, '_blank');
-    });
-  }
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App/>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root')
 );
-
-// ReactPDF.render(
-//   <Document>
-//     <Page size="A4">
-//       {App}
-//     </Page>
-//   </Document>
-//   ,
-//   `${__dirname}/example.pdf`
-// );
-// ReactDOM.render(
-//   <PDFViewer>
-//     <Document>
-//       <Page size="A4">
-//         {App}
-//       </Page>
-//     </Document>
-//   </PDFViewer>,
-//   document.getElementById('root')
-// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

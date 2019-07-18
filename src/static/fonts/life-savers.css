@@ -1,0 +1,39 @@
+/* life-savers-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 400;
+  src: url('life-savers/life-savers-v10-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Life Savers Regular'), local('LifeSavers-Regular'),
+  url('life-savers/life-savers-v10-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('life-savers/life-savers-v10-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('life-savers/life-savers-v10-latin-ext_latin-regular.svg#LifeSavers') format('svg'); /* Legacy iOS */
+}
+/* life-savers-800 - latin-ext_latin */
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 800;
+  src: url('life-savers/life-savers-v10-latin-ext_latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Life Savers ExtraBold'), local('LifeSavers-ExtraBold'),
+  url('life-savers/life-savers-v10-latin-ext_latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('life-savers/life-savers-v10-latin-ext_latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-800.woff') format('woff'), /* Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('life-savers/life-savers-v10-latin-ext_latin-800.svg#LifeSavers') format('svg'); /* Legacy iOS */
+}
+/* life-savers-700 - latin-ext_latin */
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 700;
+  src: url('life-savers/life-savers-v10-latin-ext_latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Life Savers Bold'), local('LifeSavers-Bold'),
+  url('life-savers/life-savers-v10-latin-ext_latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('life-savers/life-savers-v10-latin-ext_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-700.woff') format('woff'), /* Modern Browsers */
+  url('life-savers/life-savers-v10-latin-ext_latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('life-savers/life-savers-v10-latin-ext_latin-700.svg#LifeSavers') format('svg'); /* Legacy iOS */
+}

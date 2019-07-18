@@ -8,17 +8,24 @@ import styles from './styles';
 import Skills from "./components/SkillsSection";
 import Tools from "./components/ToolsSection";
 import Languages from "./components/LanguagesSection";
+import {cvContainerId} from "../../variables/constants";
 
 interface Props extends WithStyles<typeof styles> {}
 
 export const CV = withStyles(styles)((props: Props) => {
   const {classes} = props;
   return (
-    <Container className={classes.root} maxWidth={"md"}>
+    <Container className={classes.root} id={cvContainerId}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <div className={classes.section}>
             <Abstract/>
+          </div>
+          <div className={classes.section}>
+            <Typography className={classes.sectionTitle}>
+              {'Berufserfahrung'}
+            </Typography>
+            <WorkExperience/>
           </div>
         </Grid>
         <Grid item container xs={12} md={6}>
@@ -28,16 +35,6 @@ export const CV = withStyles(styles)((props: Props) => {
             </Typography>
             <Education/>
           </div>
-        </Grid>
-        <Grid item container xs={12} md={6}>
-          <div className={classes.section}>
-            <Typography className={classes.sectionTitle}>
-              {'Berufserfahrung'}
-            </Typography>
-            <WorkExperience/>
-          </div>
-        </Grid>
-        <Grid item container xs={12} md={6}>
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Skills'}

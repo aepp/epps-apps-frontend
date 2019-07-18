@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles, Theme, useTheme} from '@material-ui/core/styles';
 import {Grid} from "@material-ui/core";
 import Skill, {SkillType} from '../Skill';
 import StaticLinearProgress from "../StaticLinearProgress";
@@ -10,33 +10,40 @@ const useStyles = makeStyles(styles);
 interface SkillItemType {
   type: SkillType;
   level: number;
+  label?: string;
 }
 
 const skills: Array<SkillItemType> = [
   {
     type: 'react',
-    level: 75
+    level: 75,
+    label: 'ca. 2 Jahre'
   },
   {
     type: 'js',
-    level: 85
+    level: 85,
+    label: '> 5 Jahre'
   },
   {
     type: 'css',
-    level: 65
+    level: 65,
+    label: '> 5 Jahre'
   },
   {
     type: 'php',
-    level: 80
+    level: 80,
+    label: '> 5 Jahre'
   },
   {
     type: 'ts',
-    level: 20
+    level: 20,
+    label: '< 1/2 Jahre'
   }
 ];
 
 export default function Skills() {
   const classes = useStyles();
+  const theme: Theme = useTheme();
 
   return (
     <div className={classes.root}>
@@ -46,7 +53,12 @@ export default function Skills() {
             <div className={classes.skillLabel}>
               <Skill type={skill.type} labelBefore/>
             </div>
-            <StaticLinearProgress value={skill.level} color={"secondary"} className={classes.progress}/>
+            <StaticLinearProgress
+              value={skill.level}
+              className={classes.progress}
+              label={skill.label}
+              color={theme.designScheme.skillProgressColor}
+            />
           </Grid>
         ))}
       </Grid>
