@@ -11,6 +11,7 @@ import CV from "../../../pages/cv";
 import CVDrawer from "./components/CVDrawer";
 import routes from "../../../variables/routes";
 import AppBar from "./components/AppBar";
+import DefaultDrawer from "./components/DefaultDrawer";
 
 const useStyles = makeStyles(styles);
 
@@ -24,6 +25,7 @@ export const DefaultLayout: React.FunctionComponent = () => {
       <Switch>
         <Route key={routes.cv} path={routes.cv} component={CVDrawer} exact/>
       </Switch>
+      <DefaultDrawer/>
     </div>
   );
 
