@@ -7,7 +7,8 @@ import {
 } from "@material-ui/core";
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import styles from "./styles";
-import CV from "../../../pages/cv";
+import CVPage from "../../../pages/cv";
+import IndexPage from "../../../pages/index";
 import CVDrawer from "./components/CVDrawer";
 import routes from "../../../variables/routes";
 import AppBar from "./components/AppBar";
@@ -64,7 +65,8 @@ export const DefaultLayout: React.FunctionComponent = () => {
       <main className={classes.content}>
         <div className={classes.toolbar}/>
         <Switch>
-          <Route key={routes.cv} path={routes.cv} component={CV} exact/>
+          <Route key={routes.index} path={routes.index} component={IndexPage} exact/>
+          <Route key={routes.cv} path={routes.cv} component={CVPage} exact/>
         </Switch>
       </main>
     </div>

@@ -8,6 +8,12 @@ export const appBarStyles = (theme: Theme) => createStyles({
       width: `calc(100% - ${theme.constants.drawerWidth}px)`,
     },
   },
+  titleLink: {
+    textDecoration: 'none',
+    '&:visited, &:focus': {
+      textDecoration: 'none'
+    }
+  },
   title: {
     display: 'flex',
     textTransform: 'uppercase',
