@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/aepp/epps-apps-cv/branches/master/badge.svg)](https://semaphoreci.com/aepp/epps-apps-cv)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
