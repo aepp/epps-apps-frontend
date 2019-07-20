@@ -13,10 +13,14 @@ import CVDrawer from "./components/CVDrawer";
 import routes from "../../../variables/routes";
 import AppBar from "./components/AppBar";
 import DefaultDrawer from "./components/DefaultDrawer";
+import {RootState} from "../../../reducers";
+import {ThunkDispatch} from "redux-thunk";
+import {closeDrawer} from "../../../actions/app";
+import {connect} from "react-redux";
 
 const useStyles = makeStyles(styles);
 
-export const DefaultLayout: React.FunctionComponent = () => {
+const _DefaultLayout: React.FunctionComponent<StateProps & DispatchProps> = props => {
   const classes = useStyles();
   const theme: Theme = useTheme();
 
@@ -39,9 +43,8 @@ export const DefaultLayout: React.FunctionComponent = () => {
           <Drawer
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            // open={mobileOpen}
-            open={false}
-            // onClose={handleDrawerToggle}
+            open={props.isDrawerOpen}
+            onClose={props.closeDrawer}
             classes={{
               paper: classes.drawerPaper,
             }}
@@ -73,4 +76,24 @@ export const DefaultLayout: React.FunctionComponent = () => {
   );
 };
 
+
+interface StateProps {
+  isDrawerOpen: boolean,
+}
+
+const mapStateToProps = (state: RootState): StateProps => {
+  return {
+    isDrawerOpen: state.app.isDrawerOpen
+  }
+};
+
+interface DispatchProps {
+  closeDrawer: () => void;
+}
+
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): DispatchProps => ({
+  closeDrawer: () => dispatch(closeDrawer())
+});
+
+export const DefaultLayout = connect(mapStateToProps, mapDispatchToProps)(_DefaultLayout);
 export default DefaultLayout;

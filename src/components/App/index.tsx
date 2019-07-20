@@ -2,7 +2,7 @@ import React from 'react';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider} from "@material-ui/styles";
 import DefaultLayout from "../Layout/Default";
-import {themeOptions} from "../../theme";
+import {defaultTheme, themeOptions} from "../../theme";
 import {DesignSchemeIdType, designSchemes, DesignSchemeType} from "../../design";
 import {RootState} from "../../reducers";
 import {connect} from "react-redux";
@@ -23,6 +23,9 @@ const _App: React.FunctionComponent<StateProps> = props => {
     overrides: {
       MuiButton: designScheme.MuiButton
     },
+    mixins: {
+      ...defaultTheme.mixins,
+    }
   } as ThemeOptions;
 
   const theme = createMuiTheme(themeOptionsWithDesign);
@@ -40,9 +43,9 @@ interface StateProps {
   designSchemeId: DesignSchemeIdType,
 }
 
-const mapStateToProps = (states: RootState): StateProps => {
+const mapStateToProps = (state: RootState): StateProps => {
   return {
-    designSchemeId: states.cv.designSchemeId
+    designSchemeId: state.cv.designSchemeId
   }
 };
 

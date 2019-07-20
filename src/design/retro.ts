@@ -1,5 +1,7 @@
 import {DesignSchemeType} from "./index";
 import {red} from "@material-ui/core/colors";
+import {defaultTheme, themeOptions} from "../theme";
+import {CSSProperties} from "@material-ui/styles";
 
 export const darkColor = '#655643';
 export const lightColor = '#F6F7BD';
@@ -56,12 +58,20 @@ export const designSchemeRetro: DesignSchemeType = {
     }
   },
   appBarBackgroundColor,
+  appBarBackgroundContrastColor: accentColor1,
   drawerBackgroundColor,
   sectionTitle: {
     backgroundColor: sectionTitleBackgroundColor,
     color: sectionTitleColor,
     fontFamily: '"Sigmar One"',
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+    marginBottom: defaultTheme.spacing(2),
+    padding: defaultTheme.spacing(),
+    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%',
   },
   cvPageBackgroundColor,
   cvPageColor,
@@ -87,6 +97,18 @@ export const designSchemeRetro: DesignSchemeType = {
     containedPrimary: {
       color: lightColor,
       fontWeight: "bold"
+    }
+  },
+  contactItem: {
+    icon: {
+      fill: lightColor
+    },
+    iconContainer: {
+      width: 50,
+      borderRadius: '50% 0% 50% 25% / 100% 0% 100% 0%'
+    },
+    label: {
+      color: lightColor
     }
   }
 };

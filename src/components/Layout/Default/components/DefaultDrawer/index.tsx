@@ -49,9 +49,9 @@ interface StateProps {
   designSchemeId: DesignSchemeIdType,
 }
 
-const mapStateToProps = (states: RootState): StateProps => {
+const mapStateToProps = (state: RootState): StateProps => {
   return {
-    designSchemeId: states.cv.designSchemeId
+    designSchemeId: state.cv.designSchemeId
   }
 };
 

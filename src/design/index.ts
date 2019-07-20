@@ -1,10 +1,10 @@
 import {designSchemeRetro} from "./retro";
 import {designSchemeDefault} from "./default";
-import {Color, FontWeightProperty} from "csstype";
+import {Color} from "csstype";
 import {PaletteColorOptions, StyleRules} from "@material-ui/core/styles";
 import {TypeBackground} from "@material-ui/core/styles/createPalette";
 import {ButtonClassKey} from "@material-ui/core/Button";
-import {ComponentNameToClassKey} from "@material-ui/core/styles/overrides";
+import {CSSProperties} from "@material-ui/styles";
 
 export const DESIGN_SCHEME_ID_DEFAULT: DesignSchemeIdType = 'default';
 export const DESIGN_SCHEME_ID_RETRO: DesignSchemeIdType = 'retro';
@@ -27,13 +27,9 @@ interface AppStyleType {
 
 export interface DesignSchemeType {
   appTitle: AppStyleType;
-  sectionTitle: {
-    fontFamily: string;
-    fontWeight: FontWeightProperty;
-    backgroundColor: Color;
-    color: Color;
-  };
+  sectionTitle: CSSProperties;
   appBarBackgroundColor: Color;
+  appBarBackgroundContrastColor: Color;
   drawerBackgroundColor: Color;
   cvPageBackgroundColor: Color;
   cvPageColor: Color;
@@ -47,5 +43,10 @@ export interface DesignSchemeType {
   secondary: PaletteColorOptions;
   error: PaletteColorOptions;
   background: Partial<TypeBackground>,
-  MuiButton: Partial<StyleRules<ButtonClassKey>>
+  MuiButton: Partial<StyleRules<ButtonClassKey>>,
+  contactItem: {
+    iconContainer: CSSProperties,
+    icon: CSSProperties,
+    label: CSSProperties
+  }
 }

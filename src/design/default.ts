@@ -1,5 +1,6 @@
-import {DesignSchemeType} from "./index";
 import {red} from "@material-ui/core/colors";
+import {DesignSchemeType} from "./index";
+import {defaultTheme} from "../theme";
 
 export const darkColor = '#666666';
 export const lightColor = '#EBEEF7';
@@ -33,12 +34,20 @@ export const designSchemeDefault: DesignSchemeType = {
     }
   },
   appBarBackgroundColor,
+  appBarBackgroundContrastColor: lightColor,
   drawerBackgroundColor,
   sectionTitle: {
     backgroundColor: sectionTitleBackgroundColor,
     color: sectionTitleColor,
     fontFamily: '"Raleway"',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+    marginBottom: defaultTheme.spacing(2),
+    padding: defaultTheme.spacing(),
+    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%'
   },
   cvPageBackgroundColor,
   cvPageColor,
@@ -64,6 +73,18 @@ export const designSchemeDefault: DesignSchemeType = {
     containedPrimary: {
       color: lightColor,
       fontWeight: "bold"
+    }
+  },
+  contactItem: {
+    iconContainer: {
+      fill: accentColor3
+    },
+    icon: {
+      width: '20%',
+      borderRadius: '40% 0% 40% 25% / 100% 0% 100% 0%'
+    },
+    label: {
+      color: accentColor3
     }
   }
 };

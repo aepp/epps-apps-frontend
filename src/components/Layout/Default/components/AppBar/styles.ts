@@ -8,10 +8,19 @@ export const appBarStyles = (theme: Theme) => createStyles({
       width: `calc(100% - ${theme.constants.drawerWidth}px)`,
     },
   },
+  titleContainer: {
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
+  },
   titleLink: {
     textDecoration: 'none',
     '&:visited, &:focus': {
       textDecoration: 'none'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 'auto'
     }
   },
   title: {
@@ -21,10 +30,26 @@ export const appBarStyles = (theme: Theme) => createStyles({
     ...theme.designScheme.appTitle.style
   },
   menuButton: {
-    marginRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       display: 'none',
-    },
+    }
+  },
+  menuIcon: {
+    color: theme.designScheme.appBarBackgroundContrastColor
+  },
+  toolbar: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
+  },
+  titleAddition: {
+    color: theme.designScheme.appBarBackgroundContrastColor,
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: 'auto'
+    }
   }
 });
 

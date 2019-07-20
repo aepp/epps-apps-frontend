@@ -3,7 +3,8 @@ import avatar from './avatar.jpg';
 
 export const abstractStyles = (theme: Theme) => createStyles({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginBottom: theme.spacing(2)
   },
   avatarContainer: {
     display: 'flex',
@@ -29,6 +30,30 @@ export const abstractStyles = (theme: Theme) => createStyles({
   },
   about: {
     textAlign: 'center'
+  },
+  contactContainer: {
+    display: 'flex',
+    paddingRight: 0 + ' !important'
+  },
+  contactIconContainer: {
+    ...theme.designScheme.sectionTitle,
+    ...theme.designScheme.contactItem.iconContainer,
+    marginBottom: 0
+  },
+  contactIcon: {
+    ...theme.designScheme.contactItem.icon,
+    fontSize: theme.typography.fontSize
+  },
+  contactLabel: {
+    ...theme.designScheme.contactItem.label,
+    textDecoration: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
+  },
+  contactLabelContainer: {
+    paddingLeft: theme.spacing()
   }
 });
 

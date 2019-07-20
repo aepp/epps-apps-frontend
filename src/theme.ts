@@ -6,7 +6,7 @@ import {DESIGN_SCHEME_ID_RETRO, designSchemes, DesignSchemeType} from "./design"
 
 const drawerWidth = 240;
 
-const defaultTheme = createMuiTheme();
+export const defaultTheme = createMuiTheme();
 
 interface ThemeConstants {
   drawerWidth: number;
@@ -28,17 +28,6 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 export const themeOptions: Partial<ThemeOptions> = {
   typography: {
     fontFamily: ['Raleway', 'serif'].join(',')
-  },
-  mixins: {
-    ...defaultTheme.mixins
-  },
-  overrides: {
-    MuiButton: {
-      containedPrimary: {
-        color: lightColor,
-        fontWeight: defaultTheme.typography.fontWeightBold
-      }
-    }
   },
   constants: {
     drawerWidth

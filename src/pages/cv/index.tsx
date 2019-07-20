@@ -9,6 +9,7 @@ import Skills from "./components/SkillsSection";
 import Tools from "./components/ToolsSection";
 import Languages from "./components/LanguagesSection";
 import {cvContainerId} from "../../variables/constants";
+import ProjectExperience from "./components/ProjectExpirienceSection";
 
 interface Props extends WithStyles<typeof styles> {}
 
@@ -52,6 +53,14 @@ export const CV = withStyles(styles)((props: Props) => {
               {'Sprachen'}
             </Typography>
             <Languages/>
+          </div>
+        </Grid>
+        <Grid item xs={12}>
+          <div className={classes.section}>
+            <Typography className={classes.sectionTitle}>
+              {'Letzte Projekte'}
+            </Typography>
+            <ProjectExperience/>
           </div>
         </Grid>
       </Grid>

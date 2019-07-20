@@ -14,7 +14,7 @@ export const Languages = () => {
   return (
     <div className={classes.root}>
       <Grid item container spacing={2}>
-        <Grid item xs={4} className={classes.skillContainer}>
+        <Grid item md={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Deutsch'}
           </Typography>
@@ -37,7 +37,7 @@ export const Languages = () => {
             <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
           </div>
         </Grid>
-        <Grid item xs={4} className={classes.skillContainer}>
+        <Grid item md={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Russisch'}
           </Typography>
@@ -60,7 +60,7 @@ export const Languages = () => {
             <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
           </div>
         </Grid>
-        <Grid item xs={4} className={classes.skillContainer}>
+        <Grid item md={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Englisch'}
           </Typography>

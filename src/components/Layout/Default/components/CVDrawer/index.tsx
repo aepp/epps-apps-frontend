@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import {ThunkDispatch} from "redux-thunk";
-import {Button} from "@material-ui/core";
+import {Button, Hidden} from "@material-ui/core";
 import {CloudDownloadOutlined as DownloadIcon} from "@material-ui/icons";
 import {downloadCV} from "../../../../../actions/cv";
 import {RootState} from "../../../../../reducers";
@@ -9,14 +9,16 @@ import {RootState} from "../../../../../reducers";
 const _CVDrawer: React.FunctionComponent<StateProps & DispatchProps> = props => {
   return (
     <>
-      <Button
-        variant={"contained"}
-        onClick={props.downloadCV}
-        disabled={props.isDownloading}
-        color={"primary"}
-        fullWidth>
-        <DownloadIcon/>&nbsp;{'Download CV'}
-      </Button>
+      <Hidden mdDown>
+        <Button
+          variant={"contained"}
+          onClick={props.downloadCV}
+          disabled={props.isDownloading}
+          color={"primary"}
+          fullWidth>
+          <DownloadIcon/>&nbsp;{'Download CV'}
+        </Button>
+      </Hidden>
     </>
   );
 
@@ -26,9 +28,9 @@ interface StateProps {
   isDownloading: boolean,
 }
 
-const mapStateToProps = (states: RootState): StateProps => {
+const mapStateToProps = (state: RootState): StateProps => {
   return {
-    isDownloading: states.cv.isDownloading,
+    isDownloading: state.cv.isDownloading,
   }
 };
 

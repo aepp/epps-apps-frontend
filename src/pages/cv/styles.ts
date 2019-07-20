@@ -4,7 +4,9 @@ export const cvStyles = (theme: Theme) => createStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    padding: theme.spacing(2),
+    paddingLeft: theme.spacing(10),
+    paddingRight: theme.spacing(10),
+    paddingTop: theme.spacing(4),
     backgroundColor: theme.designScheme.cvPageBackgroundColor,
     color: theme.designScheme.cvPageColor
   },
@@ -15,19 +17,7 @@ export const cvStyles = (theme: Theme) => createStyles({
   sectionTitleContainer: {
     display: 'flex'
   },
-  sectionTitle: {
-    fontFamily: theme.designScheme.sectionTitle.fontFamily,
-    width: '100%',
-    backgroundColor: theme.designScheme.sectionTitle.backgroundColor,
-    color: theme.designScheme.sectionTitle.color,
-    display: 'flex',
-    justifyContent: 'center',
-    textTransform: 'uppercase',
-    marginBottom: theme.spacing(2),
-    padding: theme.spacing(),
-    fontWeight: theme.designScheme.sectionTitle.fontWeight,
-    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%'
-  }
+  sectionTitle: theme.designScheme.sectionTitle
 });
 
 export default cvStyles;
