@@ -4,8 +4,10 @@ export const cvStyles = (theme: Theme) => createStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    paddingLeft: theme.spacing(10),
-    paddingRight: theme.spacing(10),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(10),
+      paddingRight: theme.spacing(10),
+    },
     paddingTop: theme.spacing(4),
     backgroundColor: theme.designScheme.cvPageBackgroundColor,
     color: theme.designScheme.cvPageColor
@@ -17,7 +19,10 @@ export const cvStyles = (theme: Theme) => createStyles({
   sectionTitleContainer: {
     display: 'flex'
   },
-  sectionTitle: theme.designScheme.sectionTitle
+  sectionTitle: theme.designScheme.sectionTitle,
+  noPaddingBottom: {
+    paddingBottom: 0 + '!important'
+  }
 });
 
 export default cvStyles;

@@ -10,14 +10,21 @@ export const projectExperienceStyles = (theme: Theme) => createStyles({
   },
   projectLabel: {
     textTransform: 'uppercase',
-    fontWeight: theme.typography.fontWeightBold
+    fontWeight: 900,
+    textAlign: 'center'
   },
   projectSubLabel: {
     textTransform: 'uppercase',
     fontWeight: theme.typography.fontWeightBold
   },
   divider: {
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: 'transparent'
+  },
+  underline: {
+    width: '100%',
+    height: 3,
+    backgroundColor: theme.palette.secondary.main,
+    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%'
   }
 });
 

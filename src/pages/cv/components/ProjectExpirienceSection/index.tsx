@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {Grid, Typography, Divider} from '@material-ui/core';
+import {Grid, Typography, Divider, Hidden} from '@material-ui/core';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -40,56 +40,49 @@ const projects: Array<Project> = [
   // }
 ];
 
-const leftColumnSize = 2;
-const rightColumnSize = 10;
-
 export const ProjectExperience: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid item container spacing={1}>
-        {projects.map((project: Project) => (<>
-          <Grid item xs={leftColumnSize}>
-            <Typography className={classes.projectLabel}>
+        {projects.map((project: Project) => (<React.Fragment key={project.name}>
+          {/* Project name */}
+          <Grid item xs={12} md={3}>
+            <Typography className={classes.projectLabel} component={'div'}>
               {project.name}
             </Typography>
+            <div className={classes.underline}/>
           </Grid>
-          <Grid item xs={rightColumnSize} md={rightColumnSize} className={classes.roleContainer}>
-            <Typography>
-              {'Rolle:'}&nbsp;{project.role}
+          <Hidden smDown>
+            <Grid item md={9}>
+            </Grid>
+          </Hidden>
+          {/* Role */}
+          <Grid item xs={3} md={2} lg={1}>
+            <Typography className={classes.projectSubLabel}>
+              {'Rolle'}
             </Typography>
           </Grid>
-          {/*<Grid item xs={12} md={leftColumnSize}>*/}
-          {/*  <Typography className={classes.projectSubLabel}>*/}
-          {/*    {'Rolle'}*/}
-          {/*  </Typography>*/}
-          {/*</Grid>*/}
-          {/*<Grid item xs={12} md={rightColumnSize}>*/}
-          {/*  <Typography>*/}
-          {/*    {project.role}*/}
-          {/*  </Typography>*/}
-          {/*</Grid>*/}
-          <Grid item xs={12} md={leftColumnSize}>
-            <Typography className={classes.projectLabel}>
+          <Grid item xs={9} md={10} lg={11}>
+            <Typography>
+              {project.role}
+            </Typography>
+          </Grid>
+          {/* Description */}
+          <Grid item xs={12} md={2} lg={1}>
+            <Typography className={classes.projectSubLabel}>
               {'Inhalt'}
             </Typography>
           </Grid>
-          <Grid item xs={12} md={rightColumnSize}>
+          <Grid item xs={12} md={10} lg={11}>
             {project.descriptionShorter}
           </Grid>
-          {/*<Grid item xs={12} md={leftColumnSize}>*/}
-          {/*  <Typography className={classes.projectLabel}>*/}
-          {/*    {'Dauer'}*/}
-          {/*  </Typography>*/}
-          {/*</Grid>*/}
-          {/*<Grid item xs={12} md={rightColumnSize}>*/}
-          {/*  {project.duration}*/}
-          {/*</Grid>*/}
-          <Grid item xs={12}>
+          {/* Divider */}
+          <Grid item sm={12}>
             <Divider className={classes.divider}/>
           </Grid>
-        </>))}
+        </React.Fragment>))}
       </Grid>
     </div>
   );

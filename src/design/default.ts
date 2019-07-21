@@ -77,10 +77,10 @@ export const designSchemeDefault: DesignSchemeType = {
   },
   contactItem: {
     iconContainer: {
-      fill: accentColor3
+      fill: accentColor3,
+      width: 50
     },
     icon: {
-      width: '20%',
       borderRadius: '40% 0% 40% 25% / 100% 0% 100% 0%'
     },
     label: {

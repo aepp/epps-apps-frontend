@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {Grid, Typography, useTheme} from '@material-ui/core';
+import {Grid, Hidden, Typography, useTheme} from '@material-ui/core';
 import {RadialProgress} from 'react-radial-progress-indicator';
 import styles from './styles';
 import {lighten} from "@material-ui/core/styles";
@@ -14,7 +14,7 @@ export const Languages = () => {
   return (
     <div className={classes.root}>
       <Grid item container spacing={2}>
-        <Grid item md={4} xs={12} className={classes.skillContainer}>
+        <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Deutsch'}
           </Typography>
@@ -34,10 +34,15 @@ export const Languages = () => {
               text={() => {}}
               width="100%"
             />
-            <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
+            <Hidden mdDown>
+              <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
+            </Hidden>
+            <Hidden lgUp>
+              <Typography className={classes.languageLevelText}>{'Mutter-\nsprache'}</Typography>
+            </Hidden>
           </div>
         </Grid>
-        <Grid item md={4} xs={12} className={classes.skillContainer}>
+        <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Russisch'}
           </Typography>
@@ -57,10 +62,15 @@ export const Languages = () => {
               text={() => {}}
               width="100%"
             />
-            <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
+            <Hidden mdDown>
+              <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
+            </Hidden>
+            <Hidden lgUp>
+              <Typography className={classes.languageLevelText}>{'Mutter-\nsprache'}</Typography>
+            </Hidden>
           </div>
         </Grid>
-        <Grid item md={4} xs={12} className={classes.skillContainer}>
+        <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Englisch'}
           </Typography>

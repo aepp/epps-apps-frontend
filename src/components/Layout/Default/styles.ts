@@ -4,13 +4,7 @@ export const staticLinearProgressStyles = (theme: Theme) => createStyles({
   root: {
     display: 'flex',
   },
-  drawer: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.constants.drawerWidth,
-      flexShrink: 0
-    },
-  },
+  drawer: {},
   appBar: {
     marginLeft: theme.constants.drawerWidth,
     [theme.breakpoints.up('sm')]: {
@@ -25,11 +19,14 @@ export const staticLinearProgressStyles = (theme: Theme) => createStyles({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width:theme.constants.drawerWidth,
+    padding: theme.spacing(2),
+    width: theme.constants.drawerWidth,
     backgroundColor: theme.designScheme.drawerBackgroundColor
   },
   content: {
-    flexGrow: 1
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.constants.drawerWidth
+    }
   }
 });
 

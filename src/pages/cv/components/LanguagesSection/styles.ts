@@ -8,6 +8,10 @@ export const educationStyles = (theme: Theme) => createStyles({
     position: 'relative',
     height: 120,
     width: 120,
+    [theme.breakpoints.down('md')]: {
+      height: 90,
+      width: 90,
+    },
     marginLeft: 'auto',
     marginRight: 'auto'
   },

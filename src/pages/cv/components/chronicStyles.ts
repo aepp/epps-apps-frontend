@@ -3,19 +3,21 @@ import {createStyles, Theme} from '@material-ui/core';
 const dotDim = 10;
 export const chronicStyles = (theme: Theme) => createStyles({
   periodContainer: {
-    display: 'flex'
+    display: 'flex',
+    position: 'relative'
   },
   border: {
     height: '100%',
-    width: 2,
-    backgroundColor: theme.designScheme.periodBorderColor
+    width: 3,
+    backgroundColor: theme.designScheme.periodBorderColor,
+    position: 'absolute'
   },
   dot: {
-    position: 'relative',
+    position: 'absolute',
     width: dotDim,
     height: dotDim,
     background: theme.designScheme.periodDotColor,
-    left: -(dotDim / 2) - 1,
+    left: -3,
     top: dotDim / 2,
     borderRadius: '50%'
   },
@@ -28,6 +30,7 @@ export const chronicStyles = (theme: Theme) => createStyles({
     display: 'flex',
     flexDirection: 'column',
     paddingTop: theme.spacing(),
+    paddingLeft: theme.spacing()
   }
 });
 

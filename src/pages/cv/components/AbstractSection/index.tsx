@@ -39,7 +39,7 @@ export default function Abstract() {
             <Typography>Web-Developer</Typography>
           </div>
         </Grid>
-        <Grid item xs={12} md={7} className={classes.contactContainer}>
+        <Grid item xs={12} lg={7} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
             <MailIcon {...svgIconProps}/>
           </div>
@@ -47,7 +47,7 @@ export default function Abstract() {
             <a href={'mailto:info@epps-apps.com'} className={classes.contactLabel}>{'info@epps-apps.com'}</a>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={5} className={classes.contactContainer}>
+        <Grid item xs={12} lg={5} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
             <FontAwesomeIcon icon={faGithubAlt} {...svgIconProps} color={theme.designScheme.contactItem.icon.fill}/>
           </div>
@@ -55,7 +55,7 @@ export default function Abstract() {
             <a href={'https://github.com/aepp'} className={classes.contactLabel}>{'aepp'}</a>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={7} className={classes.contactContainer}>
+        <Grid item xs={12} lg={7} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
             <PhoneIcon {...svgIconProps}/>
           </div>
@@ -63,7 +63,7 @@ export default function Abstract() {
             <a href={'tel:+4917660986396'} className={classes.contactLabel}>{'+49 176 609 863 96'}</a>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={5} className={classes.contactContainer}>
+        <Grid item xs={12} lg={5} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
             <FontAwesomeIcon icon={faTwitter} {...svgIconProps} color={theme.designScheme.contactItem.icon.fill}/>
           </div>
