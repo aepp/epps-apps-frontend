@@ -24,6 +24,7 @@ export const staticLinearProgressStyles = (theme: Theme) => createStyles({
     backgroundColor: theme.designScheme.drawerBackgroundColor
   },
   content: {
+    width: '100%',
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.constants.drawerWidth
     }

@@ -11,6 +11,21 @@ export const Languages = () => {
   const classes = useStyles();
   const theme = useTheme();
 
+  const radialProgressProps = {
+    backgroundTransparent: true,
+    duration: 1000,
+    height: "100%",
+    ringFgColour: theme.designScheme.languageCircleColor,
+    ringBgColour: lighten(theme.designScheme.languageCircleColor, .7),
+    ringThickness: .05,
+    segmented: true,
+    showIntermediateProgress: false,
+    startStep: 0,
+    steps: 10,
+    text: () => '',
+    width: "100%",
+  };
+
   return (
     <div className={classes.root}>
       <Grid item container spacing={2}>
@@ -19,21 +34,7 @@ export const Languages = () => {
             {'Deutsch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <RadialProgress
-              backgroundTransparent
-              duration={5000}
-              height="100%"
-              ringFgColour={theme.designScheme.languageCircleColor}
-              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
-              ringThickness={0.05}
-              segmented
-              showIntermediateProgress={false}
-              startStep={0}
-              step={10}
-              steps={10}
-              text={() => {}}
-              width="100%"
-            />
+            <RadialProgress {...radialProgressProps} step={10}/>
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
             </Hidden>
@@ -47,21 +48,7 @@ export const Languages = () => {
             {'Russisch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <RadialProgress
-              backgroundTransparent
-              duration={5000}
-              height="100%"
-              ringFgColour={theme.designScheme.languageCircleColor}
-              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
-              ringThickness={0.05}
-              segmented
-              showIntermediateProgress={false}
-              startStep={0}
-              step={10}
-              steps={10}
-              text={() => {}}
-              width="100%"
-            />
+            <RadialProgress {...radialProgressProps} step={10}/>
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>{'Muttersprache'}</Typography>
             </Hidden>
@@ -75,21 +62,7 @@ export const Languages = () => {
             {'Englisch'}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <RadialProgress
-              backgroundTransparent
-              duration={5000}
-              height="100%"
-              ringFgColour={theme.designScheme.languageCircleColor}
-              ringBgColour={lighten(theme.designScheme.languageCircleColor, .7)}
-              ringThickness={0.05}
-              segmented
-              showIntermediateProgress={false}
-              startStep={0}
-              step={7}
-              steps={10}
-              text={() => {}}
-              width="100%"
-            />
+            <RadialProgress {...radialProgressProps} step={7}/>
             <Typography className={classes.languageLevelText} component={'div'}>gute<br/>Kenntnisse</Typography>
           </div>
         </Grid>
