@@ -13,7 +13,7 @@ ssh-keyscan -H ${DEPLOY_SERVER_URL} >> ~/.ssh/known_hosts
 ssh deploy@${DEPLOY_SERVER_URL} "mkdir -p ${APP_ROOT}/${TEMP_DIR}"
 
 rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress \
-    ${DIST_DIR}/* deploy@${DEPLOY_SERVER_URL}:${APP_ROOT}/temp
+    ${DIST_DIR}/* deploy@${DEPLOY_SERVER_URL}:${APP_ROOT}/${TEMP_DIR}
 
 ssh deploy@${DEPLOY_SERVER_URL} "\
     mkdir -p $APP_ROOT/${RELEASES_DIR}/$RELEASE_NAME; \
