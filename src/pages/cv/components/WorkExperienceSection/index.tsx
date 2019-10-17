@@ -16,7 +16,7 @@ export default function WorkExperience() {
           <div className={classes.border}/>
           <div className={`${classes.dot} ${classes.currentDot}`}/>
           <Typography className={classes.period} component={'div'}>
-            <span>ab 2013</span>
+            <span>ab 2015</span>
           </Typography>
         </Grid>
         <Grid item xs={10} className={classes.descriptionContainer}>
