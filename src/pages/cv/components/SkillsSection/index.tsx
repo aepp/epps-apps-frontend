@@ -17,7 +17,7 @@ const skills: Array<SkillItemType> = [
   {
     type: 'react',
     level: 75,
-    label: 'ca. 2 Jahre'
+    label: '> 2 Jahre'
   },
   {
     type: 'js',
