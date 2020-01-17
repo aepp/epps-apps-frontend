@@ -1,6 +1,6 @@
 {
-  "name": "epps-apps-react-app",
-  "version": "0.4.1",
+  "name": "epps-apps-frontend",
+  "version": "0.4.2",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "latest",
