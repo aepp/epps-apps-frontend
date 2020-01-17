@@ -2,17 +2,16 @@ import React from 'react';
 import {withStyles} from '@material-ui/styles';
 import {WithStyles, Container, Typography, Grid} from '@material-ui/core';
 import Education from './components/EducationSection';
-import WorkExperience from "./components/WorkExperienceSection";
-import Abstract from "./components/AbstractSection";
+import WorkExperience from './components/WorkExperienceSection';
+import Abstract from './components/AbstractSection';
 import styles from './styles';
-import Skills from "./components/SkillsSection";
-import Tools from "./components/ToolsSection";
-import Languages from "./components/LanguagesSection";
-import {cvContainerId} from "../../variables/constants";
-import ProjectExperience from "./components/ProjectExpirienceSection";
+import Skills from './components/SkillsSection';
+import Tools from './components/ToolsSection';
+import Languages from './components/LanguagesSection';
+import {cvContainerId} from '../../variables/constants';
+import ProjectExperience from './components/ProjectExpirienceSection';
 
-interface Props extends WithStyles<typeof styles> {
-}
+type Props = WithStyles<typeof styles>;
 
 export const CV = withStyles(styles)((props: Props) => {
   const {classes} = props;
@@ -21,13 +20,13 @@ export const CV = withStyles(styles)((props: Props) => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} className={classes.noPaddingBottom}>
           <div className={classes.section}>
-            <Abstract/>
+            <Abstract />
           </div>
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Berufserfahrung'}
             </Typography>
-            <WorkExperience/>
+            <WorkExperience />
           </div>
         </Grid>
         <Grid item container xs={12} md={6} className={classes.noPaddingBottom}>
@@ -35,25 +34,23 @@ export const CV = withStyles(styles)((props: Props) => {
             <Typography className={classes.sectionTitle}>
               {'Ausbildung'}
             </Typography>
-            <Education/>
+            <Education />
           </div>
           <div className={classes.section}>
-            <Typography className={classes.sectionTitle}>
-              {'Skills'}
-            </Typography>
-            <Skills/>
+            <Typography className={classes.sectionTitle}>{'Skills'}</Typography>
+            <Skills />
           </div>
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Tools & Frameworks'}
             </Typography>
-            <Tools/>
+            <Tools />
           </div>
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Sprachen'}
             </Typography>
-            <Languages/>
+            <Languages />
           </div>
         </Grid>
         <Grid item xs={12}>
@@ -61,7 +58,7 @@ export const CV = withStyles(styles)((props: Props) => {
             <Typography className={classes.sectionTitle}>
               {'Letzte Projekte'}
             </Typography>
-            <ProjectExperience/>
+            <ProjectExperience />
           </div>
         </Grid>
       </Grid>
@@ -70,4 +67,3 @@ export const CV = withStyles(styles)((props: Props) => {
 });
 
 export default CV;
-

@@ -1,12 +1,15 @@
 import {AppAction, SET_DRAWER_STATE, TOGGLE_DRAWER} from '../actions/app';
 
 export interface AppState {
-  isDrawerOpen: boolean
+  isDrawerOpen: boolean;
 }
 
-export default (state: AppState = {
-  isDrawerOpen: false
-}, action: AppAction) => {
+export default (
+  state: AppState = {
+    isDrawerOpen: false
+  },
+  action: AppAction
+) => {
   switch (action.type) {
     case TOGGLE_DRAWER:
       return {

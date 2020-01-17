@@ -27,7 +27,7 @@ export default function Abstract() {
     <div className={classes.root}>
       <Grid item container spacing={2}>
         <Grid item xs={12} className={classes.avatarContainer}>
-          <div className={classes.avatar}/>
+          <div className={classes.avatar} />
         </Grid>
         <Grid item xs={12}>
           <Typography variant={'h4'} className={classes.name}>
@@ -41,34 +41,59 @@ export default function Abstract() {
         </Grid>
         <Grid item xs={12} lg={7} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
-            <MailIcon {...svgIconProps}/>
+            <MailIcon {...svgIconProps} />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'mailto:info@epps-apps.com'} className={classes.contactLabel}>{'info@epps-apps.com'}</a>
+            <a
+              href={'mailto:info@epps-apps.com'}
+              className={classes.contactLabel}
+            >
+              {'info@epps-apps.com'}
+            </a>
           </Typography>
         </Grid>
         <Grid item xs={12} lg={5} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
-            <FontAwesomeIcon icon={faGithubAlt} {...svgIconProps} color={theme.designScheme.contactItem.icon.fill}/>
+            <FontAwesomeIcon
+              icon={faGithubAlt}
+              {...svgIconProps}
+              color={theme.designScheme.contactItem.icon.fill}
+            />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'https://github.com/aepp'} className={classes.contactLabel}>{'aepp'}</a>
+            <a
+              href={'https://github.com/aepp'}
+              className={classes.contactLabel}
+            >
+              {'aepp'}
+            </a>
           </Typography>
         </Grid>
         <Grid item xs={12} lg={7} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
-            <PhoneIcon {...svgIconProps}/>
+            <PhoneIcon {...svgIconProps} />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'tel:+4917660986396'} className={classes.contactLabel}>{'+49 176 609 863 96'}</a>
+            <a href={'tel:+4917660986396'} className={classes.contactLabel}>
+              {'+49 176 609 863 96'}
+            </a>
           </Typography>
         </Grid>
         <Grid item xs={12} lg={5} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
-            <FontAwesomeIcon icon={faTwitter} {...svgIconProps} color={theme.designScheme.contactItem.icon.fill}/>
+            <FontAwesomeIcon
+              icon={faTwitter}
+              {...svgIconProps}
+              color={theme.designScheme.contactItem.icon.fill}
+            />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'https://twitter.com/aleksandr_epp'} className={classes.contactLabel}>{'aleksandr_epp'}</a>
+            <a
+              href={'https://twitter.com/aleksandr_epp'}
+              className={classes.contactLabel}
+            >
+              {'aleksandr_epp'}
+            </a>
           </Typography>
         </Grid>
       </Grid>

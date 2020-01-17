@@ -1,6 +1,6 @@
-import React from "react";
-import {makeStyles} from "@material-ui/core";
-import styles from "./styles";
+import React from 'react';
+import {makeStyles} from '@material-ui/core';
+import styles from './styles';
 import reactIcon from './icons/react.png';
 import javascriptIcon from './icons/js.png';
 import typescriptIcon from './icons/ts.png';
@@ -15,60 +15,6 @@ import wordpressIcon from './icons/wordpress.png';
 import webpackIcon from './icons/webpack.png';
 
 const useStyles = makeStyles(styles);
-
-export type SkillType =
-  'react'
-  | 'js'
-  | 'javascript'
-  | 'ts'
-  | 'typescript'
-  | 'css'
-  | 'java'
-  | 'mui'
-  | 'material-ui'
-  | 'mysql'
-  | 'sql'
-  | 'php'
-  | 'redux'
-  | 'typo3'
-  | 'wordpress'
-  | 'webpack';
-
-type ClassesTypes = {
-  root?: string,
-  icon?: string
-};
-type SkillProps = {
-  showLabel?: boolean,
-  labelPlacement?: 'top' | 'right' | 'bottom' | 'left',
-  labelBefore?: boolean,
-  classes?: ClassesTypes,
-  className?: string,
-  type: SkillType
-};
-
-export const Skill = ({type, showLabel = true, labelPlacement = 'left', classes, className}: SkillProps) => {
-  const ownClasses = useStyles();
-  let {label, logo} = getSkill(type);
-
-  return (
-    <div
-      className={`${ownClasses.root} ${className ? className : ''} ${classes && classes.hasOwnProperty('root') ? classes.root : ''}`}
-      style={{
-        flexDirection: labelPlacement === 'left' || labelPlacement === 'right' ? 'row' : 'column'
-      }}>
-      {(labelPlacement === 'left' || labelPlacement === 'top') && showLabel && <>{label}&nbsp;</>}
-      <div
-        className={`${ownClasses.logo} ${classes && classes.hasOwnProperty('icon') ? classes.icon : ''}`}
-        style={{
-          backgroundImage: `url(${logo})`
-        }}/>
-      {(labelPlacement === 'right' || labelPlacement === 'bottom') && showLabel && <>&nbsp;{label}</>}
-    </div>
-  );
-};
-
-export default Skill;
 
 const getSkill = (type: SkillType) => {
   switch (type) {
@@ -104,3 +50,79 @@ const getSkill = (type: SkillType) => {
       throw {message: 'Invalid skill type'};
   }
 };
+
+export type SkillType =
+  | 'react'
+  | 'js'
+  | 'javascript'
+  | 'ts'
+  | 'typescript'
+  | 'css'
+  | 'java'
+  | 'mui'
+  | 'material-ui'
+  | 'mysql'
+  | 'sql'
+  | 'php'
+  | 'redux'
+  | 'typo3'
+  | 'wordpress'
+  | 'webpack';
+
+type ClassesTypes = {
+  root?: string;
+  icon?: string;
+};
+type SkillProps = {
+  showLabel?: boolean;
+  labelPlacement?: 'top' | 'right' | 'bottom' | 'left';
+  labelBefore?: boolean;
+  classes?: ClassesTypes;
+  className?: string;
+  type: SkillType;
+};
+
+export const Skill = ({
+  type,
+  showLabel = true,
+  labelPlacement = 'left',
+  classes,
+  className
+}: SkillProps) => {
+  const ownClasses = useStyles();
+  const {label, logo} = getSkill(type);
+
+  return (
+    <div
+      className={`${ownClasses.root} ${className ? className : ''} ${
+        classes && Object.prototype.hasOwnProperty.call(classes, 'root')
+          ? classes.root
+          : ''
+      }`}
+      style={{
+        flexDirection:
+          labelPlacement === 'left' || labelPlacement === 'right'
+            ? 'row'
+            : 'column'
+      }}
+    >
+      {(labelPlacement === 'left' || labelPlacement === 'top') && showLabel && (
+        <>{label}&nbsp;</>
+      )}
+      <div
+        className={`${ownClasses.logo} ${
+          classes && Object.prototype.hasOwnProperty.call(classes, 'icon')
+            ? classes.icon
+            : ''
+        }`}
+        style={{
+          backgroundImage: `url(${logo})`
+        }}
+      />
+      {(labelPlacement === 'right' || labelPlacement === 'bottom') &&
+        showLabel && <>&nbsp;{label}</>}
+    </div>
+  );
+};
+
+export default Skill;

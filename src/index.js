@@ -21,12 +21,12 @@ const createStoreWithMiddleware = applyMiddleware(
   routerMiddleware(history),
   thunk
 )(createStore);
-export let store = createStoreWithMiddleware(appReducer(history));
+export const store = createStoreWithMiddleware(appReducer(history));
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App/>
+      <App />
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')

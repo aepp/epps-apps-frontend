@@ -16,8 +16,17 @@ export const Tools: React.FunctionComponent = () => {
     <div className={classes.root}>
       <Grid item container spacing={2}>
         {tools.map(tool => (
-          <Grid item xs={gridItemSize} className={classes.toolContainer} key={tool}>
-            <Skill type={tool} labelPlacement={"bottom"} classes={{icon: classes.icon}}/>
+          <Grid
+            item
+            xs={gridItemSize}
+            className={classes.toolContainer}
+            key={tool}
+          >
+            <Skill
+              type={tool}
+              labelPlacement={'bottom'}
+              classes={{icon: classes.icon}}
+            />
           </Grid>
         ))}
       </Grid>

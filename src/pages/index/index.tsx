@@ -2,10 +2,10 @@ import React from 'react';
 import {withStyles} from '@material-ui/styles';
 import {WithStyles, Container, Grid} from '@material-ui/core';
 import styles from './styles';
-import {Link} from "react-router-dom";
-import routes from "../../variables/routes";
+import {Link} from 'react-router-dom';
+import routes from '../../variables/routes';
 
-interface Props extends WithStyles<typeof styles> {}
+type Props = WithStyles<typeof styles>;
 
 export const CV = withStyles(styles)((props: Props) => {
   const {classes} = props;
@@ -23,4 +23,3 @@ export const CV = withStyles(styles)((props: Props) => {
 });
 
 export default CV;
-

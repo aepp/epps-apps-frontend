@@ -18,19 +18,23 @@ const projects: Array<Project> = [
   {
     name: 'Projekt 1',
     role: 'Frontend Developer',
-    descriptionLong: 'Entwicklung einer React App mit geschützten Kunden- und Admin-Bereichen. Die App ermöglicht Objekte von unterschiedlichen Typen zu erstellen, zu verknüpfen und zu bearbeiten. Die Objekte durchlaufen durch die Bearbeitung verschiedene Stati und werden je nach Status der Administration oder dem Kunden zur weiteren Bearbeitung zugewiesen. Zusätzlich sind standard Dashboard Funktionen verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.',
-    descriptionShorter: 'Eine React App mit geschützten Kunden- und Admin-Bereichen. Die App ermöglicht Objekte von unterschiedlichen Typen zu erstellen, zu verknüpfen und zu bearbeiten. Die Objekte durchlaufen verschiedene Stati und werden je nach Status der Administration oder dem Kunden zugewiesen. Zusätzlich sind standard Dashboard Funktionen verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.',
+    descriptionLong:
+      'Entwicklung einer React App mit geschützten Kunden- und Admin-Bereichen. Die App ermöglicht Objekte von unterschiedlichen Typen zu erstellen, zu verknüpfen und zu bearbeiten. Die Objekte durchlaufen durch die Bearbeitung verschiedene Stati und werden je nach Status der Administration oder dem Kunden zur weiteren Bearbeitung zugewiesen. Zusätzlich sind standard Dashboard Funktionen verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.',
+    descriptionShorter:
+      'Eine React App mit geschützten Kunden- und Admin-Bereichen. Die App ermöglicht Objekte von unterschiedlichen Typen zu erstellen, zu verknüpfen und zu bearbeiten. Die Objekte durchlaufen verschiedene Stati und werden je nach Status der Administration oder dem Kunden zugewiesen. Zusätzlich sind standard Dashboard Funktionen verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.'
     // duration: '> 1 Jahr, laufend',
     // availability: '40-60 Stunden im Monat'
   },
   {
     name: 'Projekt 2',
     role: 'Frontend Developer',
-    descriptionLong: 'Entwicklung einer React App mit einem öffentlichen Bereich und geschützten Kunden- und Admin-Bereichen. Im öffentlichen Bereich wird Google Maps API, deren Ausgabe komplett an Corporate Design des Kunden angepasst ist, eingesetzt. Im geschützten Bereich gibt es ein Chat-ähnliches System und standard Dashboard Funktionen sind verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.',
-    descriptionShorter: 'Eine React App mit einem öffentlichen Bereich und geschützten Kunden- und Admin-Bereichen. Einsatz von Google Maps API in Corporate Design des Kunden. Im geschützten Bereich ein Chat-ähnliches System und standard Dashboard Funktionen sind verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend über eine REST Schnittstelle.',
+    descriptionLong:
+      'Entwicklung einer React App mit einem öffentlichen Bereich und geschützten Kunden- und Admin-Bereichen. Im öffentlichen Bereich wird Google Maps API, deren Ausgabe komplett an Corporate Design des Kunden angepasst ist, eingesetzt. Im geschützten Bereich gibt es ein Chat-ähnliches System und standard Dashboard Funktionen sind verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend erfolgt über eine REST Schnittstelle.',
+    descriptionShorter:
+      'Eine React App mit einem öffentlichen Bereich und geschützten Kunden- und Admin-Bereichen. Einsatz von Google Maps API in Corporate Design des Kunden. Im geschützten Bereich ein Chat-ähnliches System und standard Dashboard Funktionen sind verfügbar: Auflistung, Filterung, Sortierung, Benutzereinstellungen. Kommunikation mit Backend über eine REST Schnittstelle.'
     // duration: '1 Jahr, abgeschlossen',
     // availability: '40-60 Stunden im Monat'
-  },
+  }
   // {
   //   name: 'Projekt 3',
   //   role: 'Fullstack Developer',
@@ -46,43 +50,42 @@ export const ProjectExperience: React.FunctionComponent = () => {
   return (
     <div className={classes.root}>
       <Grid item container spacing={1}>
-        {projects.map((project: Project) => (<React.Fragment key={project.name}>
-          {/* Project name */}
-          <Grid item xs={12} md={3}>
-            <Typography className={classes.projectLabel} component={'div'}>
-              {project.name}
-            </Typography>
-            <div className={classes.underline}/>
-          </Grid>
-          <Hidden smDown>
-            <Grid item md={9}>
+        {projects.map((project: Project) => (
+          <React.Fragment key={project.name}>
+            {/* Project name */}
+            <Grid item xs={12} md={3}>
+              <Typography className={classes.projectLabel} component={'div'}>
+                {project.name}
+              </Typography>
+              <div className={classes.underline} />
             </Grid>
-          </Hidden>
-          {/* Role */}
-          <Grid item xs={3} md={2} lg={1}>
-            <Typography className={classes.projectSubLabel}>
-              {'Rolle'}
-            </Typography>
-          </Grid>
-          <Grid item xs={9} md={10} lg={11}>
-            <Typography>
-              {project.role}
-            </Typography>
-          </Grid>
-          {/* Description */}
-          <Grid item xs={12} md={2} lg={1}>
-            <Typography className={classes.projectSubLabel}>
-              {'Inhalt'}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={10} lg={11}>
-            {project.descriptionShorter}
-          </Grid>
-          {/* Divider */}
-          <Grid item sm={12}>
-            <Divider className={classes.divider}/>
-          </Grid>
-        </React.Fragment>))}
+            <Hidden smDown>
+              <Grid item md={9}></Grid>
+            </Hidden>
+            {/* Role */}
+            <Grid item xs={3} md={2} lg={1}>
+              <Typography className={classes.projectSubLabel}>
+                {'Rolle'}
+              </Typography>
+            </Grid>
+            <Grid item xs={9} md={10} lg={11}>
+              <Typography>{project.role}</Typography>
+            </Grid>
+            {/* Description */}
+            <Grid item xs={12} md={2} lg={1}>
+              <Typography className={classes.projectSubLabel}>
+                {'Inhalt'}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={10} lg={11}>
+              {project.descriptionShorter}
+            </Grid>
+            {/* Divider */}
+            <Grid item sm={12}>
+              <Divider className={classes.divider} />
+            </Grid>
+          </React.Fragment>
+        ))}
       </Grid>
     </div>
   );

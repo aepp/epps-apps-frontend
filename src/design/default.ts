@@ -1,6 +1,6 @@
-import {red} from "@material-ui/core/colors";
-import {DesignSchemeType} from "./index";
-import {defaultTheme} from "../theme";
+import {red} from '@material-ui/core/colors';
+import {DesignSchemeType} from './index';
+import {defaultTheme} from '../theme';
 
 export const darkColor = '#666666';
 export const lightColor = '#EBEEF7';
@@ -72,7 +72,7 @@ export const designSchemeDefault: DesignSchemeType = {
   MuiButton: {
     containedPrimary: {
       color: lightColor,
-      fontWeight: "bold"
+      fontWeight: 'bold'
     }
   },
   contactItem: {
@@ -88,4 +88,3 @@ export const designSchemeDefault: DesignSchemeType = {
     }
   }
 };
-

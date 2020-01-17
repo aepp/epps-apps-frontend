@@ -1,7 +1,7 @@
-import {DesignSchemeType} from "./index";
-import {red} from "@material-ui/core/colors";
-import {defaultTheme, themeOptions} from "../theme";
-import {CSSProperties} from "@material-ui/styles";
+import {DesignSchemeType} from './index';
+import {red} from '@material-ui/core/colors';
+import {defaultTheme, themeOptions} from '../theme';
+import {CSSProperties} from '@material-ui/styles';
 
 export const darkColor = '#655643';
 export const lightColor = '#F6F7BD';
@@ -71,7 +71,7 @@ export const designSchemeRetro: DesignSchemeType = {
     textTransform: 'uppercase',
     marginBottom: defaultTheme.spacing(2),
     padding: defaultTheme.spacing(),
-    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%',
+    borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%'
   },
   cvPageBackgroundColor,
   cvPageColor,
@@ -96,7 +96,7 @@ export const designSchemeRetro: DesignSchemeType = {
   MuiButton: {
     containedPrimary: {
       color: lightColor,
-      fontWeight: "bold"
+      fontWeight: 'bold'
     }
   },
   contactItem: {
@@ -112,7 +112,3 @@ export const designSchemeRetro: DesignSchemeType = {
     }
   }
 };
-
-
-
-
