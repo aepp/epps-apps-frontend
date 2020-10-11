@@ -54,7 +54,7 @@ const _AppBar: React.FunctionComponent<StateProps & DispatchProps> = props => {
           </Link>
         </div>
         <Typography className={classes.titleAddition}>
-          die Seite befindet sich noch im Aufbau
+          die Seite befindet sich im Aufbau
         </Typography>
       </Toolbar>
     </MuiAppBar>

@@ -74,8 +74,8 @@ export default function Abstract() {
             <PhoneIcon {...svgIconProps} />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'tel:+4917660986396'} className={classes.contactLabel}>
-              {'+49 176 609 863 96'}
+            <a href={'tel:+491727026981'} className={classes.contactLabel}>
+              {'+49 172 702 698 1'}
             </a>
           </Typography>
         </Grid>

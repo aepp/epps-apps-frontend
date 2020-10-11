@@ -17,27 +17,27 @@ const skills: Array<SkillItemType> = [
   {
     type: 'react',
     level: 75,
-    label: '> 2 Jahre'
+    label: '> 3 Jahre'
   },
   {
     type: 'js',
     level: 85,
-    label: '> 5 Jahre'
+    label: '> 6 Jahre'
   },
   {
     type: 'css',
     level: 65,
-    label: '> 5 Jahre'
+    label: '> 6 Jahre'
   },
   {
     type: 'php',
     level: 80,
-    label: '> 5 Jahre'
+    label: '> 6 Jahre'
   },
   {
     type: 'ts',
     level: 20,
-    label: '< 1/2 Jahre'
+    label: '< 1 Jahr'
   }
 ];
 
