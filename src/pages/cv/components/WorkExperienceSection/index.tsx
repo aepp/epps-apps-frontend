@@ -16,7 +16,35 @@ export default function WorkExperience() {
           <div className={classes.border} />
           <div className={`${classes.dot} ${classes.currentDot}`} />
           <Typography className={classes.period} component={'div'}>
-            <span>ab 2015</span>
+            <span>ab 02/2020</span>
+          </Typography>
+        </Grid>
+        <Grid item xs={10} className={classes.descriptionContainer}>
+          <Typography className={classes.description} component={'div'}>
+            <span className={classes.institution}>Hessischer Rundfunk</span>
+            <span className={classes.as}>Softwareentwickler</span>
+            <span className={classes.area}>
+              Schwerpunkte: Fullstack, Frontend / UX
+            </span>
+            <span>Tech-Stack:</span>
+            <span className={classes.techStack}>
+              <Skill className={classes.skill} type={'react'} />
+              &nbsp;
+              <Skill className={classes.skill} type={'javascript'} />
+              &nbsp;
+              <Skill className={classes.skill} type={'css'} />
+              &nbsp;
+              <Skill className={classes.skill} type={'java'} />
+              &nbsp;
+              <Skill className={classes.skill} type={'spring-boot'} />
+            </span>
+          </Typography>
+        </Grid>
+        <Grid item xs={2} className={classes.periodContainer}>
+          <div className={classes.border} />
+          <div className={`${classes.dot} ${classes.currentDot}`} />
+          <Typography className={classes.period} component={'div'}>
+            <span>ab 01/2015</span>
           </Typography>
         </Grid>
         <Grid item xs={10} className={classes.descriptionContainer}>

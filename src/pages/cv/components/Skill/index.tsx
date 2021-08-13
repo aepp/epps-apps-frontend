@@ -10,13 +10,20 @@ import muiIcon from './icons/mui.png';
 import mysqlIcon from './icons/mysql.png';
 import phpIcon from './icons/php.png';
 import reduxIcon from './icons/redux.png';
+import reduxSagaIcon from './icons/saga.png';
 import typo3Icon from './icons/typo3.png';
 import wordpressIcon from './icons/wordpress.png';
 import webpackIcon from './icons/webpack.png';
+import springBootIcon from './icons/spring.png';
 
 const useStyles = makeStyles(styles);
 
-const getSkill = (type: SkillType) => {
+type SkillObjectType = {
+  label: string;
+  logo: string;
+};
+
+export const getSkill = (type: SkillType): SkillObjectType => {
   switch (type) {
     case 'react':
       return {label: 'React', logo: reactIcon};
@@ -32,7 +39,7 @@ const getSkill = (type: SkillType) => {
       return {label: 'Java EE', logo: javaIcon};
     case 'mui':
     case 'material-ui':
-      return {label: 'React Material UI (UI Framework)', logo: muiIcon};
+      return {label: 'React Material UI', logo: muiIcon};
     case 'mysql':
     case 'sql':
       return {label: 'MySQL', logo: mysqlIcon};
@@ -40,14 +47,18 @@ const getSkill = (type: SkillType) => {
       return {label: 'PHP', logo: phpIcon};
     case 'redux':
       return {label: 'Redux', logo: reduxIcon};
+    case 'redux-saga':
+      return {label: 'Redux-Saga', logo: reduxSagaIcon};
     case 'typo3':
       return {label: 'TYPO3', logo: typo3Icon};
     case 'webpack':
       return {label: 'Webpack', logo: webpackIcon};
     case 'wordpress':
       return {label: 'WordPress', logo: wordpressIcon};
+    case 'spring-boot':
+      return {label: 'Spring Boot', logo: springBootIcon};
     default:
-      throw {message: 'Invalid skill type'};
+      throw new Error('Invalid skill type');
   }
 };
 
@@ -65,9 +76,11 @@ export type SkillType =
   | 'sql'
   | 'php'
   | 'redux'
+  | 'redux-saga'
   | 'typo3'
   | 'wordpress'
-  | 'webpack';
+  | 'webpack'
+  | 'spring-boot';
 
 type ClassesTypes = {
   root?: string;
@@ -88,7 +101,7 @@ export const Skill = ({
   labelPlacement = 'left',
   classes,
   className
-}: SkillProps) => {
+}: SkillProps): React.ReactElement => {
   const ownClasses = useStyles();
   const {label, logo} = getSkill(type);
 

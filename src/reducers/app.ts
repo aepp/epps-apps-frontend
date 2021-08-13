@@ -9,7 +9,7 @@ export default (
     isDrawerOpen: false
   },
   action: AppAction
-) => {
+): AppState => {
   switch (action.type) {
     case TOGGLE_DRAWER:
       return {

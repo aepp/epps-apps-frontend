@@ -4,11 +4,7 @@ import {
   FINISH_CV_DOWNLOAD,
   CHANGE_DESIGN
 } from '../actions/cv';
-import {
-  DESIGN_SCHEME_ID_RETRO,
-  DesignSchemeIdType,
-  designSchemes
-} from '../design';
+import {DESIGN_SCHEME_ID_RETRO, DesignSchemeIdType} from '../design';
 
 export interface CVState {
   isDownloading: boolean;
@@ -21,7 +17,7 @@ export default (
     designSchemeId: DESIGN_SCHEME_ID_RETRO
   },
   action: CVAction
-) => {
+): CVState => {
   switch (action.type) {
     case BEGIN_CV_DOWNLOAD:
       return {

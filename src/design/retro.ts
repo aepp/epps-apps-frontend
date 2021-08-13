@@ -1,7 +1,6 @@
-import {DesignSchemeType} from './index';
 import {red} from '@material-ui/core/colors';
-import {defaultTheme, themeOptions} from '../theme';
-import {CSSProperties} from '@material-ui/styles';
+import {defaultTheme} from '../theme';
+import {DesignSchemeType} from './index';
 
 export const darkColor = '#655643';
 export const lightColor = '#F6F7BD';

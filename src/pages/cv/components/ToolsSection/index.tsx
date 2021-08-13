@@ -1,12 +1,12 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Grid} from '@material-ui/core';
+import {GridSize} from '@material-ui/core/Grid';
 import Skill, {SkillType} from '../Skill';
 import styles from './styles';
-import {GridSize} from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(styles);
-const tools = ['redux', 'webpack', 'mui'] as Array<SkillType>;
+const tools = ['redux', 'redux-saga', 'webpack', 'mui'] as Array<SkillType>;
 const gridItemSize = Math.floor(12 / tools.length) as GridSize;
 
 export const Tools: React.FunctionComponent = () => {

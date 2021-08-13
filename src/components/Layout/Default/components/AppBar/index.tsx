@@ -1,4 +1,6 @@
 import React from 'react';
+import {ThunkDispatch} from 'redux-thunk';
+import {connect} from 'react-redux';
 import {
   AppBar as MuiAppBar,
   IconButton,
@@ -8,13 +10,10 @@ import {
 } from '@material-ui/core';
 import {Menu as MenuIcon} from '@material-ui/icons';
 import {Link} from 'react-router-dom';
-import styles from './styles';
 import routes from '../../../../../variables/routes';
-import {DesignSchemeIdType} from '../../../../../design';
 import {RootState} from '../../../../../reducers';
-import {ThunkDispatch} from 'redux-thunk';
-import {connect} from 'react-redux';
 import {toggleDrawer} from '../../../../../actions/app';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 

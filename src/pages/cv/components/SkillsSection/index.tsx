@@ -13,35 +13,50 @@ interface SkillItemType {
   label?: string;
 }
 
+const currentYear = new Date().getFullYear();
+
+const REACT_START_YEAR = 2018;
+const JS_START_YEAR = 2013;
+const CSS_START_YEAR = 2013;
+const PHP_START_YEAR = 2013;
+const SPRING_BOOT_START_YEAR = 2020;
+
 const skills: Array<SkillItemType> = [
   {
     type: 'react',
-    level: 75,
-    label: '> 3 Jahre'
+    level: 85,
+    label: `> ${currentYear - REACT_START_YEAR} Jahre`
   },
   {
     type: 'js',
     level: 85,
-    label: '> 6 Jahre'
+    label: `> ${currentYear - JS_START_YEAR} Jahre`
   },
   {
     type: 'css',
     level: 65,
-    label: '> 6 Jahre'
-  },
-  {
-    type: 'php',
-    level: 80,
-    label: '> 6 Jahre'
+    label: `> ${currentYear - CSS_START_YEAR} Jahre`
   },
   {
     type: 'ts',
     level: 20,
     label: '< 1 Jahr'
+  },
+  {
+    type: 'php',
+    level: 75,
+    label: `> ${currentYear - PHP_START_YEAR} Jahre`
+  },
+  {
+    type: 'spring-boot',
+    level: 30,
+    label:
+      `> ${currentYear - SPRING_BOOT_START_YEAR} Jahr` +
+      (currentYear - SPRING_BOOT_START_YEAR > 1 ? 'e' : '')
   }
 ];
 
-export default function Skills() {
+export const Skills: React.FunctionComponent = () => {
   const classes = useStyles();
   const theme: Theme = useTheme();
 
@@ -69,4 +84,5 @@ export default function Skills() {
       </Grid>
     </div>
   );
-}
+};
+export default Skills;

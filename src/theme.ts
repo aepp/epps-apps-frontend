@@ -1,12 +1,6 @@
 import {createMuiTheme} from '@material-ui/core/styles';
 import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
-import {red} from '@material-ui/core/colors';
-import {accentColor1, darkColor, lightColor} from './design/retro';
-import {
-  DESIGN_SCHEME_ID_RETRO,
-  designSchemes,
-  DesignSchemeType
-} from './design';
+import {DesignSchemeType} from './design';
 
 const drawerWidth = 240;
 
