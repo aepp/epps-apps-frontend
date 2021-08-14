@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {ThunkDispatch} from 'redux-thunk';
+import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Button, Hidden} from '@material-ui/core';
 import {CloudDownloadOutlined as DownloadIcon} from '@material-ui/icons';
-import {downloadCV} from '../../../../../actions/cv';
+import {CVAction, downloadCV} from '../../../../../actions/cv';
 import {RootState} from '../../../../../reducers';
 
 const _CVDrawer: React.FunctionComponent<StateProps &
@@ -41,9 +41,9 @@ interface DispatchProps {
 }
 
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<{}, {}, any>
+  dispatch: ThunkDispatch<{}, {}, CVAction>
 ): DispatchProps => ({
-  downloadCV: () => dispatch(downloadCV())
+  downloadCV: (): ThunkAction<{}, {}, {}, CVAction> => dispatch(downloadCV())
 });
 
 export const CVDrawer = connect(mapStateToProps, mapDispatchToProps)(_CVDrawer);

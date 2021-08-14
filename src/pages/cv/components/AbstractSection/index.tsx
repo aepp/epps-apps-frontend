@@ -4,10 +4,10 @@ import {
   MailOutline as MailIcon,
   PhoneOutlined as PhoneIcon
 } from '@material-ui/icons';
-import styles from './styles';
 import {Grid, Typography, useTheme} from '@material-ui/core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTwitter, faGithubAlt} from '@fortawesome/free-brands-svg-icons';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -29,14 +29,12 @@ export default function Abstract() {
         <Grid item xs={12} className={classes.avatarContainer}>
           <div className={classes.avatar} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} className={classes.nameAndJob}>
           <Typography variant={'h4'} className={classes.name}>
             {'Aleksandr Epp'}
           </Typography>
-        </Grid>
-        <Grid item xs={12}>
           <div className={classes.about}>
-            <Typography>Web-Developer</Typography>
+            <Typography>Software developer (Fullstack, UX)</Typography>
           </div>
         </Grid>
         <Grid item xs={12} lg={7} className={classes.contactContainer}>

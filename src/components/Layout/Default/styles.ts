@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const staticLinearProgressStyles = (theme: Theme) =>
+export const staticLinearProgressStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       display: 'flex'

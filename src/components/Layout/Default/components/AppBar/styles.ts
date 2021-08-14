@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const appBarStyles = (theme: Theme) =>
+export const appBarStyles = (theme: Theme): StyleRules =>
   createStyles({
     appBar: {
       backgroundColor: theme.designScheme.appBarBackgroundColor,
@@ -42,8 +43,10 @@ export const appBarStyles = (theme: Theme) =>
       display: 'flex',
       width: '100%',
       flexDirection: 'row',
+      alignItems: 'center',
       [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'center'
       }
     },
     titleAddition: {

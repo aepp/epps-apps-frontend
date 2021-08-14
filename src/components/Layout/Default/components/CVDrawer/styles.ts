@@ -1,6 +1,7 @@
-import {createStyles, Theme} from '@material-ui/core';
+import {createStyles} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const cvDrawerStyles = (theme: Theme) =>
+export const cvDrawerStyles = (): StyleRules =>
   createStyles({
     root: {}
   });

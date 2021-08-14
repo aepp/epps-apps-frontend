@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const cvStyles = (theme: Theme) =>
+export const cvStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       display: 'flex',

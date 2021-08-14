@@ -12,7 +12,7 @@ import {Menu as MenuIcon} from '@material-ui/icons';
 import {Link} from 'react-router-dom';
 import routes from '../../../../../variables/routes';
 import {RootState} from '../../../../../reducers';
-import {toggleDrawer} from '../../../../../actions/app';
+import {AppAction, toggleDrawer} from '../../../../../actions/app';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -52,9 +52,6 @@ const _AppBar: React.FunctionComponent<StateProps & DispatchProps> = props => {
             </Typography>
           </Link>
         </div>
-        <Typography className={classes.titleAddition}>
-          die Seite befindet sich im Aufbau
-        </Typography>
       </Toolbar>
     </MuiAppBar>
   );
@@ -75,9 +72,9 @@ interface DispatchProps {
 }
 
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<{}, {}, any>
+  dispatch: ThunkDispatch<{}, {}, AppAction>
 ): DispatchProps => ({
-  toggleDrawer: () => dispatch(toggleDrawer())
+  toggleDrawer: (): AppAction => dispatch(toggleDrawer())
 });
 
 export const AppBar = connect(mapStateToProps, mapDispatchToProps)(_AppBar);

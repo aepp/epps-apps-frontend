@@ -32,7 +32,7 @@ export default (
     case CHANGE_DESIGN:
       return {
         ...state,
-        designSchemeId: action.payload.designSchemeId as DesignSchemeIdType
+        designSchemeId: action.payload?.designSchemeId as DesignSchemeIdType
       };
     default:
       return state;

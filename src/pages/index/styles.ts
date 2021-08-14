@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const indexStyles = (theme: Theme) =>
+export const indexStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       padding: theme.spacing(3)

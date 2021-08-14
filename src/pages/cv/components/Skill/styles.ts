@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const skillStyles = (theme: Theme) =>
+export const skillStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       display: 'flex',
@@ -14,6 +15,11 @@ export const skillStyles = (theme: Theme) =>
       backgroundPosition: 'center',
       width: theme.spacing(4),
       height: theme.spacing(4)
+    },
+    chipIcon: {
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+      borderRadius: '50%'
     }
   });
 

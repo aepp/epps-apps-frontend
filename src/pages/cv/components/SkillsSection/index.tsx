@@ -71,7 +71,7 @@ export const Skills: React.FunctionComponent = () => {
             key={skill.type}
           >
             <div className={classes.skillLabel}>
-              <Skill type={skill.type} labelBefore />
+              <Skill type={skill.type} labelBefore chip />
             </div>
             <StaticLinearProgress
               value={skill.level}

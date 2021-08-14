@@ -1,6 +1,7 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const projectExperienceStyles = (theme: Theme) =>
+export const projectExperienceStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       flexGrow: 1

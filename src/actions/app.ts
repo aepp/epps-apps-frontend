@@ -5,11 +5,13 @@ export type SET_DRAWER_STATE = typeof SET_DRAWER_STATE;
 
 export type AppAction = {
   type: TOGGLE_DRAWER | SET_DRAWER_STATE;
-  payload?: any;
+  payload?: {
+    isDrawerOpen?: boolean;
+  };
 };
 
-export const toggleDrawer = () => ({type: TOGGLE_DRAWER});
-export const closeDrawer = () => ({
+export const toggleDrawer = (): AppAction => ({type: TOGGLE_DRAWER});
+export const closeDrawer = (): AppAction => ({
   type: SET_DRAWER_STATE,
   payload: {isDrawerOpen: false}
 });

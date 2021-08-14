@@ -19,7 +19,7 @@ export default (
     case SET_DRAWER_STATE:
       return {
         ...state,
-        isDrawerOpen: action.payload.isDrawerOpen
+        isDrawerOpen: Boolean(action.payload?.isDrawerOpen)
       };
     default:
       return state;

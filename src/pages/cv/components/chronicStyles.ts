@@ -1,7 +1,8 @@
 import {createStyles, Theme} from '@material-ui/core';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
 const dotDim = 10;
-export const chronicStyles = (theme: Theme) =>
+export const chronicStyles = (theme: Theme): StyleRules =>
   createStyles({
     periodContainer: {
       display: 'flex',

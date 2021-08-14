@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core';
+import {Chip, makeStyles} from '@material-ui/core';
 import styles from './styles';
 import reactIcon from './icons/react.png';
 import javascriptIcon from './icons/js.png';
@@ -93,6 +93,7 @@ type SkillProps = {
   classes?: ClassesTypes;
   className?: string;
   type: SkillType;
+  chip?: boolean;
 };
 
 export const Skill = ({
@@ -100,18 +101,43 @@ export const Skill = ({
   showLabel = true,
   labelPlacement = 'left',
   classes,
-  className
+  className,
+  chip
 }: SkillProps): React.ReactElement => {
   const ownClasses = useStyles();
   const {label, logo} = getSkill(type);
 
-  return (
+  const rootClassName = `${ownClasses.root} ${className ? className : ''} ${
+    classes && Object.prototype.hasOwnProperty.call(classes, 'root')
+      ? classes.root
+      : ''
+  }`;
+  const icon = (
     <div
-      className={`${ownClasses.root} ${className ? className : ''} ${
-        classes && Object.prototype.hasOwnProperty.call(classes, 'root')
-          ? classes.root
+      className={`${ownClasses.logo} ${chip && ownClasses.chipIcon} ${
+        classes && Object.prototype.hasOwnProperty.call(classes, 'icon')
+          ? classes.icon
           : ''
       }`}
+      style={{
+        backgroundImage: `url(${logo})`
+      }}
+    />
+  );
+
+  if (chip)
+    return (
+      <Chip
+        className={rootClassName}
+        color={'secondary'}
+        label={label}
+        icon={icon}
+      />
+    );
+
+  return (
+    <div
+      className={rootClassName}
       style={{
         flexDirection:
           labelPlacement === 'left' || labelPlacement === 'right'
@@ -122,16 +148,7 @@ export const Skill = ({
       {(labelPlacement === 'left' || labelPlacement === 'top') && showLabel && (
         <>{label}&nbsp;</>
       )}
-      <div
-        className={`${ownClasses.logo} ${
-          classes && Object.prototype.hasOwnProperty.call(classes, 'icon')
-            ? classes.icon
-            : ''
-        }`}
-        style={{
-          backgroundImage: `url(${logo})`
-        }}
-      />
+      {icon}
       {(labelPlacement === 'right' || labelPlacement === 'bottom') &&
         showLabel && <>&nbsp;{label}</>}
     </div>

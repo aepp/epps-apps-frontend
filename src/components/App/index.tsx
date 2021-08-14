@@ -1,20 +1,23 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {ThemeProvider} from '@material-ui/styles';
-import DefaultLayout from '../Layout/Default';
+import {createMuiTheme} from '@material-ui/core';
+import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
 import {defaultTheme, themeOptions} from '../../theme';
 import {
+  DESIGN_SCHEME_ID_RETRO,
   DesignSchemeIdType,
   designSchemes,
   DesignSchemeType
 } from '../../design';
 import {RootState} from '../../reducers';
-import {connect} from 'react-redux';
-import {createMuiTheme} from '@material-ui/core';
-import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
+import DefaultLayout from '../Layout/Default';
 
 const _App: React.FunctionComponent<StateProps> = props => {
-  const designScheme: DesignSchemeType = designSchemes[props.designSchemeId];
+  const designScheme: DesignSchemeType =
+    (props.designSchemeId && designSchemes[props.designSchemeId]) ||
+    DESIGN_SCHEME_ID_RETRO;
   const themeOptionsWithDesign: ThemeOptions = {
     ...themeOptions,
     palette: {
@@ -44,7 +47,7 @@ const _App: React.FunctionComponent<StateProps> = props => {
 };
 
 interface StateProps {
-  designSchemeId: DesignSchemeIdType;
+  designSchemeId?: DesignSchemeIdType;
 }
 
 const mapStateToProps = (state: RootState): StateProps => {

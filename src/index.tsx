@@ -22,6 +22,9 @@ const createStoreWithMiddleware = applyMiddleware(
   thunk
 )(createStore);
 export const store = createStoreWithMiddleware(appReducer(history));
+export type AppDispatch = typeof store.dispatch;
+export type RootStateReturnType = ReturnType<typeof store.getState>;
+export type GetState = typeof store.getState;
 
 ReactDOM.render(
   <Provider store={store}>

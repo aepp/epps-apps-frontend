@@ -1,7 +1,8 @@
 import {createStyles, Theme} from '@material-ui/core';
 import avatar from './avatar.jpg';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const abstractStyles = (theme: Theme) =>
+export const abstractStyles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -23,6 +24,10 @@ export const abstractStyles = (theme: Theme) =>
       borderColor: theme.designScheme.avatarBorderColor,
       borderWidth: 10,
       borderStyle: 'solid'
+    },
+    nameAndJob: {
+      display: 'flex',
+      flexDirection: 'column'
     },
     name: {
       textTransform: 'uppercase',

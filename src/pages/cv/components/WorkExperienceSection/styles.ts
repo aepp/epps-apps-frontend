@@ -1,7 +1,8 @@
 import {createStyles, Theme} from '@material-ui/core';
 import chronicStyles from '../chronicStyles';
+import {StyleRules} from '@material-ui/styles/withStyles';
 
-export const educationStyles = (theme: Theme) =>
+export const educationStyles = (theme: Theme): StyleRules =>
   createStyles({
     ...chronicStyles(theme),
     root: {
@@ -28,7 +29,8 @@ export const educationStyles = (theme: Theme) =>
       fontSize: theme.typography.fontSize
     },
     skill: {
-      margin: theme.spacing(0.5)
+      marginRight: theme.spacing(0.5),
+      marginTop: theme.spacing(0.5)
     }
   });
 
