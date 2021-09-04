@@ -7,7 +7,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {routerMiddleware, ConnectedRouter} from 'connected-react-router';
-import {appReducer} from './reducers';
+import {rootReducer} from './reducers';
 
 import './static/fonts/raleway.css';
 import './static/fonts/life-savers.css';
@@ -21,7 +21,7 @@ const createStoreWithMiddleware = applyMiddleware(
   routerMiddleware(history),
   thunk
 )(createStore);
-export const store = createStoreWithMiddleware(appReducer(history));
+export const store = createStoreWithMiddleware(rootReducer(history));
 export type AppDispatch = typeof store.dispatch;
 export type RootStateReturnType = ReturnType<typeof store.getState>;
 export type GetState = typeof store.getState;
