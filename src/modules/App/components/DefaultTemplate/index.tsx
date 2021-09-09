@@ -1,26 +1,26 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {ThunkDispatch} from 'redux-thunk';
-import {connect} from 'react-redux';
+import {useSelector} from 'react-redux';
+import {AnyAction} from 'redux';
 import {Theme, Drawer, Hidden} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import {RootState} from '../../../../rootReducer';
 import routes from '../../../../variables/routes';
+import {action} from '../../../../index';
 import CVPage from '../../../CV';
 import IndexPage from '../../../Home';
 import CVDrawer from '../../../CV/components/LeftDrawer';
-import {AppAction} from '../../actions/app';
-import {closeDrawer} from '../../thunks';
+import {CLOSE_DRAWER} from '../../actions/leftDrawer';
+import {isLeftDrawerOpen} from '../../reducers';
 import DefaultDrawer from '../DefaultDrawer';
 import AppBar from '../AppBar';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const _DefaultLayout: React.FunctionComponent<StateProps &
-  DispatchProps> = props => {
+export const DefaultLayout: React.FunctionComponent = () => {
   const classes = useStyles();
   const theme: Theme = useTheme();
+  const isDrawerOpen = useSelector(isLeftDrawerOpen);
 
   const drawer = (
     <div className={classes.drawer}>
@@ -41,8 +41,8 @@ const _DefaultLayout: React.FunctionComponent<StateProps &
           <Drawer
             variant='temporary'
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={props.isLeftDrawerOpen}
-            onClose={props.closeDrawer}
+            open={isDrawerOpen}
+            onClose={(): AnyAction => action(CLOSE_DRAWER)}
             classes={{
               paper: classes.drawerPaper
             }}
@@ -81,29 +81,4 @@ const _DefaultLayout: React.FunctionComponent<StateProps &
   );
 };
 
-interface StateProps {
-  isLeftDrawerOpen: boolean;
-}
-
-const mapStateToProps = (state: RootState): StateProps => {
-  console.log(state);
-  return {
-    isLeftDrawerOpen: state.main.app.isLeftDrawerOpen
-  };
-};
-
-interface DispatchProps {
-  closeDrawer: () => void;
-}
-
-const mapDispatchToProps = (
-  dispatch: ThunkDispatch<{}, {}, any>
-): DispatchProps => ({
-  closeDrawer: (): AppAction => dispatch(closeDrawer())
-});
-
-export const DefaultLayout = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_DefaultLayout);
 export default DefaultLayout;

@@ -1,11 +1,22 @@
-import {AppAction, SET_DRAWER_STATE, TOGGLE_DRAWER} from '../actions/app';
+import {DesignSchemeIdType} from '../../../theme';
+import {DESIGN_SCHEME_ID_RETRO} from '../../../theme/retro';
+import {
+  AppAction,
+  FINISH_APP_INITIALIZATION,
+  RESET_APP,
+  CHANGE_DESIGN
+} from '../actions/app';
+import {MainState} from './index';
 
 export interface AppState {
-  isLeftDrawerOpen: boolean;
+  isInitialized: boolean;
+  designSchemeId: DesignSchemeIdType;
 }
 
 const initialState: AppState = {
-  isLeftDrawerOpen: false
+  isInitialized: false,
+  designSchemeId: (window.localStorage.getItem('designSchemeId') ||
+    DESIGN_SCHEME_ID_RETRO) as DesignSchemeIdType
 };
 
 export const reducerKey = 'app';
@@ -15,15 +26,19 @@ export default (
   action: AppAction
 ): AppState => {
   switch (action.type) {
-    case TOGGLE_DRAWER:
+    case FINISH_APP_INITIALIZATION:
       return {
         ...state,
-        isLeftDrawerOpen: !state.isLeftDrawerOpen
+        isInitialized: true
       };
-    case SET_DRAWER_STATE:
+    case RESET_APP:
+      return {
+        ...initialState
+      };
+    case CHANGE_DESIGN:
       return {
         ...state,
-        isLeftDrawerOpen: Boolean(action.payload?.isLeftDrawerOpen)
+        designSchemeId: action.payload?.designSchemeId || DESIGN_SCHEME_ID_RETRO
       };
     default:
       return state;
@@ -31,5 +46,8 @@ export default (
 };
 
 export const selectors = {
-  isLeftDrawerOpen: (state: AppState): boolean => state.isLeftDrawerOpen
+  isAppInitialized: (state: MainState): boolean =>
+    state[reducerKey].isInitialized,
+  getCurrentDesignSchemeId: (state: MainState): DesignSchemeIdType =>
+    state[reducerKey].designSchemeId
 };

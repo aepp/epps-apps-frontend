@@ -1,20 +1,14 @@
-import {
-  BEGIN_CV_DOWNLOAD,
-  CVAction,
-  FINISH_CV_DOWNLOAD,
-  CHANGE_DESIGN
-} from '../actions';
-import {DESIGN_SCHEME_ID_RETRO, DesignSchemeIdType} from '../../../theme';
+import {BEGIN_CV_DOWNLOAD, CVAction, FINISH_CV_DOWNLOAD} from '../actions';
 
 export interface CVState {
   isDownloading: boolean;
-  designSchemeId: DesignSchemeIdType;
 }
+
+export const reducerKey = 'cv';
 
 export default (
   state: CVState = {
-    isDownloading: false,
-    designSchemeId: DESIGN_SCHEME_ID_RETRO
+    isDownloading: false
   },
   action: CVAction
 ): CVState => {
@@ -29,12 +23,11 @@ export default (
         ...state,
         isDownloading: false
       };
-    case CHANGE_DESIGN:
-      return {
-        ...state,
-        designSchemeId: action.payload?.designSchemeId as DesignSchemeIdType
-      };
     default:
       return state;
   }
+};
+
+export const selectors = {
+  isDownloadingCv: (state: CVState): boolean => state.isDownloading
 };

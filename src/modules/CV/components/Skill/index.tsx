@@ -1,5 +1,8 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {Chip, makeStyles} from '@material-ui/core';
+import {DESIGN_SCHEME_ID_RETRO} from '../../../../theme/retro';
+import {getCurrentDesignSchemeId} from '../../../App/reducers';
 import styles from './styles';
 import reactIcon from './icons/react.png';
 import javascriptIcon from './icons/js.png';
@@ -105,6 +108,8 @@ export const Skill = ({
   chip
 }: SkillProps): React.ReactElement => {
   const ownClasses = useStyles();
+  const currentDesignSchemeId = useSelector(getCurrentDesignSchemeId);
+
   const {label, logo} = getSkill(type);
 
   const rootClassName = `${ownClasses.root} ${className ? className : ''} ${
@@ -129,7 +134,11 @@ export const Skill = ({
     return (
       <Chip
         className={rootClassName}
-        color={'secondary'}
+        color={
+          currentDesignSchemeId === DESIGN_SCHEME_ID_RETRO
+            ? 'secondary'
+            : 'primary'
+        }
         label={label}
         icon={icon}
       />

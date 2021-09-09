@@ -1,5 +1,6 @@
 import {createStyles, Theme} from '@material-ui/core';
 import {StyleRules} from '@material-ui/styles/withStyles';
+import {DESIGN_SCHEME_ID_RETRO} from '../../../../theme/retro';
 
 export const appBarStyles = (theme: Theme): StyleRules =>
   createStyles({
@@ -56,7 +57,10 @@ export const appBarStyles = (theme: Theme): StyleRules =>
       }
     },
     greeting: {
-      color: theme.palette.primary.main,
+      color:
+        theme.designScheme.id === DESIGN_SCHEME_ID_RETRO
+          ? theme.palette.primary.main
+          : theme.palette.text.primary,
       marginRight: theme.spacing()
     },
     rightPart: {

@@ -34,8 +34,6 @@ const createStoreWithMiddleware = applyMiddleware(
 export const routerReducer = connectRouter(history) as Reducer;
 export const store = createStoreWithMiddleware(rootReducer(routerReducer));
 
-export type AppDispatch = typeof store.dispatch;
-export type RootStateReturnType = ReturnType<typeof store.getState>;
 export type GetState = typeof store.getState;
 
 export const action = (type: string, payload?: object): AnyAction =>

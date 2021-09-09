@@ -1,7 +1,8 @@
 import {red} from '@material-ui/core/colors';
 import {defaultTheme} from '../muiTheme';
-import {DesignSchemeType} from './index';
+import {DesignSchemeIdType, DesignSchemeType} from './index';
 
+export const DESIGN_SCHEME_ID_RETRO: DesignSchemeIdType = 'retro';
 export const darkColor = '#655643';
 export const lightColor = '#F6F7BD';
 export const accentColor1 = '#BF4D28';
@@ -25,6 +26,7 @@ const periodActiveDotColor = accentColor1;
 const avatarBorderColor = accentColor1;
 
 export const designSchemeRetro: DesignSchemeType = {
+  id: DESIGN_SCHEME_ID_RETRO,
   appTitle: {
     style: {
       fontFamily: '"Monoton"',

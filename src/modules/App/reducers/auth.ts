@@ -1,4 +1,3 @@
-import {AppAction, SET_DRAWER_STATE, TOGGLE_DRAWER} from '../actions/app';
 import {AuthAction, SAVE_USER} from '../actions/auth';
 import {MainState} from './index';
 
@@ -18,7 +17,6 @@ export default (
 ): AuthState => {
   switch (action.type) {
     case SAVE_USER:
-      console.log(SAVE_USER, action.payload);
       return {
         ...state,
         user: action.payload?.user

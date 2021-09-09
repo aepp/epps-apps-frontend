@@ -1,6 +1,8 @@
 import {red} from '@material-ui/core/colors';
-import {DesignSchemeType} from './index';
 import {defaultTheme} from '../muiTheme';
+import {DesignSchemeIdType, DesignSchemeType} from './index';
+
+export const DESIGN_SCHEME_ID_DEFAULT: DesignSchemeIdType = 'default';
 
 export const darkColor = '#666666';
 export const lightColor = '#EBEEF7';
@@ -27,6 +29,7 @@ export const periodActiveDotColor = accentColor1;
 export const avatarBorderColor = accentColor2;
 
 export const designSchemeDefault: DesignSchemeType = {
+  id: DESIGN_SCHEME_ID_DEFAULT,
   appTitle: {
     style: {
       fontFamily: '"Raleway"',

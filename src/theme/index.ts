@@ -1,22 +1,14 @@
-import {designSchemeRetro} from './retro';
-import {designSchemeDefault} from './default';
+import {DESIGN_SCHEME_ID_RETRO, designSchemeRetro} from './retro';
+import {DESIGN_SCHEME_ID_DEFAULT, designSchemeDefault} from './default';
 import {Color} from 'csstype';
 import {PaletteColorOptions, StyleRules} from '@material-ui/core/styles';
 import {TypeBackground} from '@material-ui/core/styles/createPalette';
 import {ButtonClassKey} from '@material-ui/core/Button';
 import {CSSProperties} from '@material-ui/styles';
 
-export const DESIGN_SCHEME_ID_DEFAULT: DesignSchemeIdType = 'default';
-export const DESIGN_SCHEME_ID_RETRO: DesignSchemeIdType = 'retro';
-
 export type DesignSchemeIdType = 'retro' | 'default';
 
-type DesignSchemesType = {
-  [DESIGN_SCHEME_ID_RETRO]: any;
-  [DESIGN_SCHEME_ID_DEFAULT]: any;
-};
-
-export const designSchemes: DesignSchemesType = {
+export const designSchemes = {
   [DESIGN_SCHEME_ID_RETRO]: designSchemeRetro,
   [DESIGN_SCHEME_ID_DEFAULT]: designSchemeDefault
 };
@@ -26,6 +18,7 @@ interface AppStyleType {
 }
 
 export interface DesignSchemeType {
+  id: DesignSchemeIdType;
   appTitle: AppStyleType;
   sectionTitle: CSSProperties;
   appBarBackgroundColor: Color;

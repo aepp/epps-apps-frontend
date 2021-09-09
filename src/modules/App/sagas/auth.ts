@@ -7,6 +7,7 @@ import {
   SAVE_USER
 } from '../actions/auth';
 import {action} from '../../../index';
+import {FINISH_APP_INITIALIZATION} from '../actions/app';
 
 const checkAuthenticationStatus = (): Promise<object | null> => {
   const headers = new Headers(); // Currently empty
@@ -66,8 +67,7 @@ const logout = (): Promise<any> => {
       if (response.status === 200) return response.json();
       throw new Error('failed to authenticate user');
     })
-    .then(responseJson => {
-      console.log('responseJson', responseJson);
+    .then(() => {
       action(SAVE_USER, {user: null});
     })
     .catch(error => {
@@ -89,6 +89,7 @@ function* handleCheckAuthenticationStatus(): Generator {
   if (response.user) {
     yield put(action(SAVE_USER, {user: response.user}));
   }
+  yield put(action(FINISH_APP_INITIALIZATION));
 }
 
 export function* watchLogin(): Generator {

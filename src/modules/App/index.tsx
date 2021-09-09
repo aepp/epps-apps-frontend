@@ -1,32 +1,30 @@
 import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
+import {useSelector} from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme} from '@material-ui/core';
 import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
 import {defaultTheme, themeOptions} from '../../muiTheme';
-import {
-  DESIGN_SCHEME_ID_RETRO,
-  DesignSchemeIdType,
-  designSchemes,
-  DesignSchemeType
-} from '../../theme';
-import {RootState} from '../../rootReducer';
-import DefaultLayout from './components/DefaultTemplate';
+import {designSchemes, DesignSchemeType} from '../../theme';
+import {DESIGN_SCHEME_ID_RETRO} from '../../theme/retro';
 import {action} from '../../index';
+import DefaultLayout from './components/DefaultTemplate';
 import {CHECK_AUTHENTICATION_STATUS} from './actions/auth';
+import {getCurrentDesignSchemeId} from './reducers';
 
-const _App: React.FunctionComponent<StateProps> = props => {
+export const App: React.FunctionComponent = () => {
+  const designSchemeId = useSelector(getCurrentDesignSchemeId);
+
   const designScheme: DesignSchemeType =
-    (props.designSchemeId && designSchemes[props.designSchemeId]) ||
-    DESIGN_SCHEME_ID_RETRO;
+    (designSchemeId && designSchemes[designSchemeId]) || DESIGN_SCHEME_ID_RETRO;
   const themeOptionsWithDesign: ThemeOptions = {
     ...themeOptions,
     palette: {
       primary: designScheme.primary,
       secondary: designScheme.secondary,
       error: designScheme.error,
-      background: designScheme.background
+      background: designScheme.background,
+      designScheme: designSchemeId
     },
     designScheme: designScheme,
     overrides: {
@@ -52,15 +50,4 @@ const _App: React.FunctionComponent<StateProps> = props => {
   );
 };
 
-interface StateProps {
-  designSchemeId?: DesignSchemeIdType;
-}
-
-const mapStateToProps = (state: RootState): StateProps => {
-  return {
-    designSchemeId: state.cv.designSchemeId
-  };
-};
-
-export const App = connect(mapStateToProps, null)(_App);
 export default App;

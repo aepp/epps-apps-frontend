@@ -1,6 +1,6 @@
-import React, {ChangeEvent} from 'react';
-import {connect} from 'react-redux';
-import {ThunkDispatch} from 'redux-thunk';
+import React from 'react';
+import {AnyAction} from 'redux';
+import {useSelector} from 'react-redux';
 import {
   Radio,
   FormControl,
@@ -9,20 +9,20 @@ import {
   FormControlLabel
 } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {RootState} from '../../../../rootReducer';
-import {
-  DESIGN_SCHEME_ID_DEFAULT,
-  DESIGN_SCHEME_ID_RETRO,
-  DesignSchemeIdType
-} from '../../../../theme';
-import {changeDesign} from '../../../CV/actions';
+import {DesignSchemeIdType} from '../../../../theme';
+import {DESIGN_SCHEME_ID_DEFAULT} from '../../../../theme/default';
+import {DESIGN_SCHEME_ID_RETRO} from '../../../../theme/retro';
+import {action} from '../../../../index';
+import {CHANGE_DESIGN} from '../../actions/app';
+import {getCurrentDesignSchemeId} from '../../reducers';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const _DefaultDrawer: React.FunctionComponent<StateProps &
-  DispatchProps> = props => {
+export const DefaultDrawer: React.FunctionComponent = () => {
   const classes = useStyles();
+
+  const designSchemeId = useSelector(getCurrentDesignSchemeId);
 
   return (
     <>
@@ -40,9 +40,9 @@ const _DefaultDrawer: React.FunctionComponent<StateProps &
           aria-label='Theme'
           name='design-theme'
           className={classes.changeDesignRadioGroup}
-          value={props.designSchemeId}
-          onChange={(e: ChangeEvent<{}>, value: string) =>
-            props.changeDesign(value as DesignSchemeIdType)
+          value={designSchemeId}
+          onChange={(e, value): AnyAction =>
+            action(CHANGE_DESIGN, {designSchemeId: value as DesignSchemeIdType})
           }
         >
           <FormControlLabel
@@ -61,28 +61,4 @@ const _DefaultDrawer: React.FunctionComponent<StateProps &
   );
 };
 
-interface StateProps {
-  designSchemeId: DesignSchemeIdType;
-}
-
-const mapStateToProps = (state: RootState): StateProps => {
-  return {
-    designSchemeId: state.cv.designSchemeId
-  };
-};
-
-interface DispatchProps {
-  changeDesign: (designSchemeId: DesignSchemeIdType) => void;
-}
-
-const mapDispatchToProps = (
-  dispatch: ThunkDispatch<{}, {}, any>
-): DispatchProps => ({
-  changeDesign: designSchemeId => dispatch(changeDesign(designSchemeId))
-});
-
-export const DefaultDrawer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_DefaultDrawer);
 export default DefaultDrawer;
