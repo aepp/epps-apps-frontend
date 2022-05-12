@@ -17,11 +17,11 @@ export const educationStyles = (theme: Theme): StyleRules =>
       flexDirection: 'column'
     },
     institution: {
-      textTransform: 'uppercase',
-      fontWeight: theme.typography.fontWeightBold
+      fontSize: theme.typography.fontSize
     },
     degree: {
-      fontSize: theme.typography.fontSize
+      textTransform: 'uppercase',
+      fontWeight: theme.typography.fontWeightBold
     },
     as: {
       fontStyle: 'italic'
