@@ -23,7 +23,7 @@ const checkAuthenticationStatus = (): Promise<object | null> => {
   };
 
   return fetch(
-    `${process.env.REACT_APP_BACKEND_API_URL}/auth/login/success`,
+    `${process.env.REACT_APP_BACKEND_API_URL || window.location.origin}/auth/login/success`,
     params
   )
     .then(response => {
@@ -36,7 +36,6 @@ const checkAuthenticationStatus = (): Promise<object | null> => {
     })
     .catch(error => {
       console.error('authentication failed', error);
-      return null;
     });
 };
 
@@ -44,7 +43,7 @@ const login = (returnTo: string): void => {
   window.open(
     `${
       process.env.REACT_APP_BACKEND_API_URL
-    }/auth?returnTo=${window.encodeURIComponent(returnTo)}`,
+    }/auth?returnTo=${encodeURIComponent(returnTo)}`,
     '_self'
   );
 };
