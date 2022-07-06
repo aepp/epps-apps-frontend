@@ -2,16 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './modules/App';
 import * as serviceWorker from './serviceWorker';
-import {createHashHistory} from 'history';
-import {createStore, applyMiddleware, AnyAction, Reducer} from 'redux';
+import {createStore, applyMiddleware, AnyAction} from 'redux';
+import {HashRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import {Provider} from 'react-redux';
-import {
-  routerMiddleware,
-  connectRouter,
-  ConnectedRouter
-} from 'connected-react-router';
 import {rootReducer} from './rootReducer';
 import rootSaga from './rootSaga';
 
@@ -21,18 +16,15 @@ import './static/fonts/monoton.css';
 import './static/fonts/press-start-2p.css';
 import './static/fonts/sigmar-one.css';
 
-const history = createHashHistory();
-
 const sagaMiddleware = createSagaMiddleware();
 
 const createStoreWithMiddleware = applyMiddleware(
-  routerMiddleware(history),
   thunk,
   sagaMiddleware
 )(createStore);
 
-export const routerReducer = connectRouter(history) as Reducer;
-export const store = createStoreWithMiddleware(rootReducer(routerReducer));
+// @ts-ignore
+export const store = createStoreWithMiddleware(rootReducer());
 
 export type GetState = typeof store.getState;
 
@@ -43,9 +35,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <HashRouter>
       <App />
-    </ConnectedRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );

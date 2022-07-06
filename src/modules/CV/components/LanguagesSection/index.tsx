@@ -33,11 +33,13 @@ export const Languages = () => {
           <Typography className={classes.languageLabel}>{'Deutsch'}</Typography>
           <div className={classes.circleProgressContainer}>
             <RadialProgress {...radialProgressProps} step={10} />
+            {/* @ts-ignore */}
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>
                 {'Muttersprache'}
               </Typography>
             </Hidden>
+            {/* @ts-ignore */}
             <Hidden lgUp>
               <Typography className={classes.languageLevelText}>
                 {'Mutter-\nsprache'}
@@ -51,11 +53,13 @@ export const Languages = () => {
           </Typography>
           <div className={classes.circleProgressContainer}>
             <RadialProgress {...radialProgressProps} step={10} />
+            {/* @ts-ignore */}
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>
                 {'Muttersprache'}
               </Typography>
             </Hidden>
+            {/* @ts-ignore */}
             <Hidden lgUp>
               <Typography className={classes.languageLevelText}>
                 {'Mutter-\nsprache'}

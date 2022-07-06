@@ -29,8 +29,9 @@ export const downloadCV = (): ThunkAction<any, any, any, any> => async (
 ): Promise<AnyAction> => {
   dispatch({type: BEGIN_CV_DOWNLOAD});
   window.scrollTo(0, 0);
+  console.log(getState());
   const designScheme = designSchemes[
-    getState().cv.designSchemeId as DesignSchemeIdType
+    getState().main.app.designSchemeId as DesignSchemeIdType
   ] as DesignSchemeType;
   const cvContainer = document.querySelector(
     `#${cvContainerId}`

@@ -1,20 +1,23 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {useDispatch, useSelector} from 'react-redux';
 import {Button, Hidden} from '@material-ui/core';
 import {CloudDownloadOutlined as DownloadIcon} from '@material-ui/icons';
-import {CVAction, downloadCV} from '../../actions';
-import {RootState} from '../../../../rootReducer';
+import {selectIsDownloadingCv} from '../../../../rootReducer';
+import {downloadCV} from '../../actions';
 
-const _CVDrawer: React.FunctionComponent<StateProps &
-  DispatchProps> = props => {
+export const CVDrawer: React.FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const isDownloadingCv = useSelector(selectIsDownloadingCv);
   return (
     <>
+      {/*<Box sx={{display: {xs: 'none', md: 'block'}}}>*/}
+      {/* @ts-ignore */}
       <Hidden mdDown>
         <Button
           variant={'contained'}
-          onClick={props.downloadCV}
-          disabled={props.isDownloading}
+          // @ts-ignore
+          onClick={() => dispatch(downloadCV())}
+          disabled={isDownloadingCv}
           color={'primary'}
           fullWidth
         >
@@ -26,25 +29,4 @@ const _CVDrawer: React.FunctionComponent<StateProps &
   );
 };
 
-interface StateProps {
-  isDownloading: boolean;
-}
-
-const mapStateToProps = (state: RootState): StateProps => {
-  return {
-    isDownloading: state.cv.isDownloading
-  };
-};
-
-interface DispatchProps {
-  downloadCV: () => void;
-}
-
-const mapDispatchToProps = (
-  dispatch: ThunkDispatch<{}, {}, CVAction>
-): DispatchProps => ({
-  downloadCV: (): ThunkAction<{}, {}, {}, CVAction> => dispatch(downloadCV())
-});
-
-export const CVDrawer = connect(mapStateToProps, mapDispatchToProps)(_CVDrawer);
 export default CVDrawer;

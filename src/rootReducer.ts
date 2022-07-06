@@ -1,5 +1,4 @@
 import {combineReducers, Reducer} from 'redux';
-import {RouterState} from 'connected-react-router';
 import CVReducer, {
   CVState,
   reducerKey as cvReducerKey,
@@ -11,19 +10,15 @@ import MainReducer, {
 } from './modules/App/reducers';
 
 export interface RootState {
-  router: RouterState;
   [cvReducerKey]: CVState;
   [mainReducerKey]: MainState;
 }
 
-export const rootReducer = (routerReducer: Reducer): Reducer =>
+export const rootReducer = (): Reducer =>
   combineReducers<RootState>({
-    router: routerReducer,
     [cvReducerKey]: CVReducer,
     [mainReducerKey]: MainReducer()
   });
 
-export const getRouter = (state: RootState): RouterState => state.router;
-
-export const isDownloadingCv = (state: RootState): boolean =>
-  cvSelectors.isDownloadingCv(state[cvReducerKey]);
+export const selectIsDownloadingCv = (state: RootState): boolean =>
+  cvSelectors.selectIsDownloadingCv(state[cvReducerKey]);

@@ -1,7 +1,6 @@
 import React from 'react';
 import {makeStyles, Theme, Typography} from '@material-ui/core';
 import {lighten} from '@material-ui/core/styles';
-import {Color} from 'csstype';
 import styles from './styles';
 import {useTheme} from '@material-ui/styles';
 
@@ -12,7 +11,7 @@ interface ClassesTypes {
   progress?: string;
 }
 
-type ProgressColorTypes = 'primary' | 'secondary' | Color;
+type ProgressColorTypes = 'primary' | 'secondary' | string;
 
 interface Props {
   value: number;

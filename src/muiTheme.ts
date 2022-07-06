@@ -1,16 +1,16 @@
-import {createMuiTheme} from '@material-ui/core/styles';
-import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
+import {createTheme} from '@material-ui/core/styles';
+import {ThemeOptions} from '@material-ui/core/styles/createTheme';
 import {DesignSchemeType} from './theme';
 
 const drawerWidth = 240;
 
-export const defaultTheme = createMuiTheme();
+export const defaultTheme = createTheme();
 
 interface ThemeConstants {
   drawerWidth: number;
 }
 
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@material-ui/core/styles/createTheme' {
   interface Theme {
     designScheme: DesignSchemeType;
     constants: ThemeConstants;

@@ -3,6 +3,7 @@ import avatar from './avatar.jpg';
 import {StyleRules} from '@material-ui/styles/withStyles';
 
 export const abstractStyles = (theme: Theme): StyleRules =>
+  // @ts-ignore
   createStyles({
     root: {
       flexGrow: 1,
@@ -32,6 +33,7 @@ export const abstractStyles = (theme: Theme): StyleRules =>
     name: {
       textTransform: 'uppercase',
       textAlign: 'center',
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold
     },
     about: {

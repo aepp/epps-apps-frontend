@@ -1,5 +1,4 @@
-import {takeLatest, call, select, put} from '@redux-saga/core/effects';
-import {getLocation} from 'connected-react-router';
+import {takeLatest, call, put} from '@redux-saga/core/effects';
 import {
   CHECK_AUTHENTICATION_STATUS,
   LOGIN,
@@ -23,7 +22,8 @@ const checkAuthenticationStatus = (): Promise<object | null> => {
   };
 
   return fetch(
-    `${process.env.REACT_APP_BACKEND_API_URL || window.location.origin}/auth/login/success`,
+    `${process.env.REACT_APP_BACKEND_API_URL ||
+      window.location.origin}/auth/login/success`,
     params
   )
     .then(response => {
@@ -75,8 +75,7 @@ const logout = (): Promise<any> => {
 };
 
 function* handleLogin(): Generator {
-  const location: any = yield select(getLocation);
-  yield call(login, location?.pathname || '');
+  yield call(login, window.location.pathname);
 }
 
 function* handleLogout(): Generator {
@@ -84,10 +83,10 @@ function* handleLogout(): Generator {
 }
 
 function* handleCheckAuthenticationStatus(): Generator {
-  const response: any = yield call(checkAuthenticationStatus);
-  if (response.user) {
-    yield put(action(SAVE_USER, {user: response.user}));
-  }
+  // const response: any = yield call(checkAuthenticationStatus);
+  // if (response.user) {
+  //   yield put(action(SAVE_USER, {user: response.user}));
+  // }
   yield put(action(FINISH_APP_INITIALIZATION));
 }
 

@@ -17,6 +17,7 @@ export const projectExperienceStyles = (theme: Theme): StyleRules =>
     },
     projectSubLabel: {
       textTransform: 'uppercase',
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold
     },
     divider: {

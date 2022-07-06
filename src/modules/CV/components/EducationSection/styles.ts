@@ -21,6 +21,7 @@ export const educationStyles = (theme: Theme): StyleRules =>
     },
     degree: {
       textTransform: 'uppercase',
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold
     },
     as: {

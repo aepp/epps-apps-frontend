@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {AnyAction} from 'redux';
 import {Theme, Drawer, Hidden} from '@material-ui/core';
@@ -15,6 +15,7 @@ import DefaultDrawer from '../DefaultDrawer';
 import AppBar from '../AppBar';
 import styles from './styles';
 
+// @ts-ignore
 const useStyles = makeStyles(styles);
 
 export const DefaultLayout: React.FunctionComponent = () => {
@@ -22,12 +23,12 @@ export const DefaultLayout: React.FunctionComponent = () => {
   const theme: Theme = useTheme();
   const isDrawerOpen = useSelector(isLeftDrawerOpen);
 
-  const drawer = (
+  const DrawerContent = () => (
     <div className={classes.drawer}>
       <div className={classes.toolbar} />
-      <Switch>
-        <Route key={routes.cv} path={routes.cv} component={CVDrawer} exact />
-      </Switch>
+      <Routes>
+        <Route key={routes.cv} path={routes.cv} element={<CVDrawer />} />
+      </Routes>
       <DefaultDrawer />
     </div>
   );
@@ -37,6 +38,7 @@ export const DefaultLayout: React.FunctionComponent = () => {
       <AppBar />
       <nav className={classes.drawer} aria-label='Page navigation'>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        {/* @ts-ignore */}
         <Hidden smUp implementation='css'>
           <Drawer
             variant='temporary'
@@ -50,9 +52,10 @@ export const DefaultLayout: React.FunctionComponent = () => {
               keepMounted: true // Better open performance on mobile.
             }}
           >
-            {drawer}
+            <DrawerContent />
           </Drawer>
         </Hidden>
+        {/* @ts-ignore */}
         <Hidden xsDown implementation='css'>
           <Drawer
             classes={{
@@ -61,21 +64,21 @@ export const DefaultLayout: React.FunctionComponent = () => {
             variant='permanent'
             open
           >
-            {drawer}
+            <DrawerContent />
           </Drawer>
         </Hidden>
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Switch>
+        <Routes>
           <Route
-            key={routes.index}
-            path={routes.index}
-            component={IndexPage}
-            exact
+            index
+            // key={routes.index}
+            // path={routes.index}
+            element={<IndexPage />}
           />
-          <Route key={routes.cv} path={routes.cv} component={CVPage} exact />
-        </Switch>
+          <Route key={routes.cv} path={routes.cv} element={<CVPage />} />
+        </Routes>
       </main>
     </div>
   );

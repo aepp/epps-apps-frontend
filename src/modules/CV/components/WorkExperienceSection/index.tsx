@@ -16,9 +16,11 @@ export default function WorkExperience() {
           <div className={classes.border} />
           <div className={`${classes.dot} ${classes.currentDot}`} />
           <Typography className={classes.period} component={'div'}>
+            {/* @ts-ignore */}
             <Hidden smDown>
               <span>ab 02/2020</span>
             </Hidden>
+            {/* @ts-ignore */}
             <Hidden mdUp>
               <span>ab 2020</span>
             </Hidden>
@@ -45,9 +47,11 @@ export default function WorkExperience() {
           <div className={classes.border} />
           <div className={`${classes.dot} ${classes.currentDot}`} />
           <Typography className={classes.period} component={'div'}>
+            {/* @ts-ignore */}
             <Hidden smDown>
               <span>ab 01/2015</span>
             </Hidden>
+            {/* @ts-ignore */}
             <Hidden mdUp>
               <span>ab 2015</span>
             </Hidden>

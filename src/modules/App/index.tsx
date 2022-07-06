@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {ThemeProvider} from '@material-ui/styles';
-import {createMuiTheme} from '@material-ui/core';
-import {ThemeOptions} from '@material-ui/core/styles/createMuiTheme';
+import {createTheme} from '@material-ui/core';
+import {ThemeOptions} from '@material-ui/core/styles/createTheme';
 import {defaultTheme, themeOptions} from '../../muiTheme';
 import {designSchemes, DesignSchemeType} from '../../theme';
 import {DESIGN_SCHEME_ID_RETRO} from '../../theme/retro';
@@ -35,7 +35,7 @@ export const App: React.FunctionComponent = () => {
     }
   } as ThemeOptions;
 
-  const theme = createMuiTheme(themeOptionsWithDesign);
+  const theme = createTheme(themeOptionsWithDesign);
 
   useEffect(() => {
     action(CHECK_AUTHENTICATION_STATUS);

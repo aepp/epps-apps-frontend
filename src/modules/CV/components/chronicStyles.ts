@@ -28,6 +28,7 @@ export const chronicStyles = (theme: Theme): StyleRules =>
       top: 0
     },
     period: {
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold,
       display: 'flex',
       flexDirection: 'column',

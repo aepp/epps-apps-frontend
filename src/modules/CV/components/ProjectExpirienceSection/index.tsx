@@ -72,6 +72,7 @@ export const ProjectExperience: React.FunctionComponent = () => {
                 </Typography>
                 <div className={classes.underline} />
               </Grid>
+              {/* @ts-ignore */}
               <Hidden smDown>
                 <Grid item md={9} />
               </Hidden>

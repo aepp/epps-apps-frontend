@@ -37,6 +37,7 @@ export const educationStyles = (theme: Theme): StyleRules =>
       marginBottom: theme.spacing(),
       textAlign: 'center',
       textTransform: 'uppercase',
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold
     }
   });

@@ -1,6 +1,6 @@
 import React from 'react';
-import {withStyles} from '@material-ui/styles';
-import {WithStyles, Container, Typography, Grid} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import {Container, Typography, Grid} from '@material-ui/core';
 import Education from './components/EducationSection';
 import WorkExperience from './components/WorkExperienceSection';
 import Abstract from './components/AbstractSection';
@@ -11,10 +11,13 @@ import Languages from './components/LanguagesSection';
 import {cvContainerId} from '../../variables/constants';
 import ProjectExperience from './components/ProjectExpirienceSection';
 
-type Props = WithStyles<typeof styles>;
+// @ts-ignore
+const useStyles = makeStyles(styles);
 
-export const CV = withStyles(styles)((props: Props) => {
-  const {classes} = props;
+export const CV = () => {
+  // const {classes} = props;
+  const classes = useStyles();
+
   return (
     <Container className={classes.root} id={cvContainerId}>
       <Grid container spacing={3}>
@@ -64,6 +67,6 @@ export const CV = withStyles(styles)((props: Props) => {
       </Grid>
     </Container>
   );
-});
+};
 
 export default CV;

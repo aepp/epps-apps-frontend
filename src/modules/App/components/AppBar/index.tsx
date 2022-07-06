@@ -66,7 +66,7 @@ const AppBar: React.FunctionComponent = () => {
             </Typography>
           </Link>
         </div>
-        {isAppReady && (
+        {process.env.NODE_ENV === 'development' && isAppReady && (
           <div className={classes.rightPart}>
             {!isAuthenticated && (
               <Button

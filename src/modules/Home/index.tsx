@@ -1,14 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {withStyles} from '@material-ui/styles';
-import {WithStyles, Container, Grid} from '@material-ui/core';
+import {Container, Grid} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 import routes from '../../variables/routes';
 import styles from './styles';
 
-type Props = WithStyles<typeof styles>;
+// @ts-ignore
+const useStyles = makeStyles(styles);
 
-export const CV = withStyles(styles)((props: Props) => {
-  const {classes} = props;
+export const CV = () => {
+  const classes = useStyles();
 
   return (
     <Container className={classes.root}>
@@ -21,6 +22,6 @@ export const CV = withStyles(styles)((props: Props) => {
       </Grid>
     </Container>
   );
-});
+};
 
 export default CV;

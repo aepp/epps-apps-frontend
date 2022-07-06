@@ -29,5 +29,5 @@ export default (
 };
 
 export const selectors = {
-  isDownloadingCv: (state: CVState): boolean => state.isDownloading
+  selectIsDownloadingCv: (state: CVState): boolean => state.isDownloading
 };

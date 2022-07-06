@@ -7,6 +7,7 @@ export const defaultDrawerStyles = (theme: Theme): StyleRules =>
       marginTop: theme.spacing(2)
     },
     changeDesignFormControlLabel: {
+      // @ts-ignore
       fontWeight: theme.typography.fontWeightBold,
       textTransform: 'uppercase'
     },
