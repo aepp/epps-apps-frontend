@@ -8,8 +8,8 @@ import styles from './styles';
 const useStyles = makeStyles(styles);
 const toolSizes = {row1: 3, row2: 3};
 type ToolType = {
-  type: SkillType,
-  size: GridSize
+  type: SkillType;
+  size: GridSize;
 };
 const tools = [
   {
@@ -43,7 +43,7 @@ const tools = [
   {
     type: 'gitlab',
     size: toolSizes.row2
-  },
+  }
 ] as Array<ToolType>;
 const gridItemSize = Math.max(Math.floor(12 / tools.length), 2) as GridSize;
 

@@ -1,9 +1,9 @@
-import React from "react";
-import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
-import Skill, { SkillType } from "../Skill";
-import StaticLinearProgress from "../StaticLinearProgress";
-import styles from "./styles";
+import React from 'react';
+import {makeStyles, Theme, useTheme} from '@material-ui/core/styles';
+import {Grid} from '@material-ui/core';
+import Skill, {SkillType} from '../Skill';
+import StaticLinearProgress from '../StaticLinearProgress';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -25,28 +25,31 @@ const JAVA_START_YEAR = 2020;
 
 const getLabelAndLevelFromStartYear = (startYear: number) => {
   const years = currentYear - startYear;
-  return { label: `> ${years} Jahre`, level: years > MAX_SKILL_YEARS ? 90 : years * 10 };
+  return {
+    label: `> ${years} Jahre`,
+    level: years > MAX_SKILL_YEARS ? 90 : years * 10
+  };
   // return `> ${years} years`;
 };
 const skills: Array<SkillItemType> = [
   {
-    type: "react",
+    type: 'react',
     ...getLabelAndLevelFromStartYear(REACT_START_YEAR)
   },
   {
-    type: "angular",
+    type: 'angular',
     ...getLabelAndLevelFromStartYear(ANGULAR_START_YEAR)
   },
   {
-    type: "js",
+    type: 'js',
     ...getLabelAndLevelFromStartYear(JS_START_YEAR)
   },
   {
-    type: "ts",
+    type: 'ts',
     ...getLabelAndLevelFromStartYear(TYPESCRIPT_START_YEAR)
   },
   {
-    type: "java",
+    type: 'java',
     ...getLabelAndLevelFromStartYear(JAVA_START_YEAR)
   }
 ];
@@ -66,7 +69,7 @@ export const Skills: React.FunctionComponent = () => {
             key={skill.type}
           >
             <div className={classes.skillLabel}>
-              <Skill type={skill.type} labelBefore chip/>
+              <Skill type={skill.type} labelBefore chip />
             </div>
             <StaticLinearProgress
               value={skill.level}
