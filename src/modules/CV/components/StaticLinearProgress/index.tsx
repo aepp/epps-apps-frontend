@@ -50,7 +50,7 @@ export const StaticLinearProgress: React.FunctionComponent<Props> & {
   const defaultHeight = theme.spacing(0.5);
 
   const heightStyle = label
-    ? {height: height || 20}
+    ? {height: height || theme.spacing(4)}
     : {height: height || defaultHeight};
   const labelColorStyle =
     percentageValue < 50 ? {color: theme.palette.grey[700]} : {};
@@ -62,7 +62,9 @@ export const StaticLinearProgress: React.FunctionComponent<Props> & {
       style={{
         backgroundColor:
           backgroundColor || lighten(progressColor || defaultColor, 0.7),
-        ...heightStyle
+        ...heightStyle,
+        display: 'flex',
+        alignItems: 'center'
       }}
     >
       {label && (

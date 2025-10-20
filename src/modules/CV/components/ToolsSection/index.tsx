@@ -6,8 +6,46 @@ import Skill, {SkillType} from '../Skill';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
-const tools = ['redux', 'redux-saga', 'webpack', 'mui'] as Array<SkillType>;
-const gridItemSize = Math.floor(12 / tools.length) as GridSize;
+const toolSizes = {row1: 3, row2: 3};
+type ToolType = {
+  type: SkillType,
+  size: GridSize
+};
+const tools = [
+  {
+    type: 'react',
+    size: toolSizes.row1
+  },
+  {
+    type: 'redux',
+    size: toolSizes.row1
+  },
+  {
+    type: 'redux-saga',
+    size: toolSizes.row1
+  },
+  {
+    type: 'mui',
+    size: toolSizes.row1
+  },
+  {
+    type: 'webpack',
+    size: toolSizes.row2
+  },
+  {
+    type: 'spring-boot',
+    size: toolSizes.row2
+  },
+  {
+    type: 'docker',
+    size: toolSizes.row2
+  },
+  {
+    type: 'gitlab',
+    size: toolSizes.row2
+  },
+] as Array<ToolType>;
+const gridItemSize = Math.max(Math.floor(12 / tools.length), 2) as GridSize;
 
 export const Tools: React.FunctionComponent = () => {
   const classes = useStyles();
@@ -18,12 +56,12 @@ export const Tools: React.FunctionComponent = () => {
         {tools.map(tool => (
           <Grid
             item
-            xs={gridItemSize}
+            xs={tool.size}
             className={classes.toolContainer}
-            key={tool}
+            key={tool.type}
           >
             <Skill
-              type={tool}
+              type={tool.type}
               labelPlacement={'bottom'}
               classes={{icon: classes.icon}}
             />

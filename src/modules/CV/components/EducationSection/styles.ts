@@ -9,7 +9,8 @@ export const educationStyles = (theme: Theme): StyleRules =>
     },
     ...chronicStyles(theme),
     descriptionContainer: {
-      paddingLeft: theme.spacing()
+      paddingLeft: theme.spacing(),
+      marginBottom: theme.spacing(2)
     },
     description: {
       paddingTop: theme.spacing(),

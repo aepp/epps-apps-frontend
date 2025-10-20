@@ -18,6 +18,9 @@ import typo3Icon from './icons/typo3.png';
 import wordpressIcon from './icons/wordpress.png';
 import webpackIcon from './icons/webpack.png';
 import springBootIcon from './icons/spring.png';
+import jakartaEeIcon from './icons/jakarta-ee.png';
+import dockerIcon from './icons/docker.png';
+import gitlabCiCdIcon from './icons/gitlab.png';
 
 const useStyles = makeStyles(styles);
 
@@ -40,9 +43,11 @@ export const getSkill = (type: SkillType): SkillObjectType => {
       return {label: 'CSS', logo: cssIcon};
     case 'java':
       return {label: 'Java EE', logo: javaIcon};
+    case 'jakarta':
+      return {label: 'Jakarta EE', logo: jakartaEeIcon};
     case 'mui':
     case 'material-ui':
-      return {label: 'React Material UI', logo: muiIcon};
+      return {label: 'MUI', logo: muiIcon};
     case 'mysql':
     case 'sql':
       return {label: 'MySQL', logo: mysqlIcon};
@@ -60,6 +65,10 @@ export const getSkill = (type: SkillType): SkillObjectType => {
       return {label: 'WordPress', logo: wordpressIcon};
     case 'spring-boot':
       return {label: 'Spring Boot', logo: springBootIcon};
+    case 'docker':
+      return {label: 'Docker', logo: dockerIcon};
+    case 'gitlab':
+      return {label: 'Gitlab CI/CD', logo: gitlabCiCdIcon};
     default:
       throw new Error('Invalid skill type');
   }
@@ -73,6 +82,7 @@ export type SkillType =
   | 'typescript'
   | 'css'
   | 'java'
+  | 'jakarta'
   | 'mui'
   | 'material-ui'
   | 'mysql'
@@ -83,7 +93,9 @@ export type SkillType =
   | 'typo3'
   | 'wordpress'
   | 'webpack'
-  | 'spring-boot';
+  | 'spring-boot'
+  | 'docker'
+  | 'gitlab';
 
 type ClassesTypes = {
   root?: string;
@@ -135,9 +147,10 @@ export const Skill = ({
       <Chip
         className={rootClassName}
         color={
-          currentDesignSchemeId === DESIGN_SCHEME_ID_RETRO
-            ? 'secondary'
-            : 'primary'
+          'secondary'
+          // currentDesignSchemeId === DESIGN_SCHEME_ID_RETRO
+          //   ? 'secondary'
+          //   : 'primary'
         }
         label={label}
         icon={icon}

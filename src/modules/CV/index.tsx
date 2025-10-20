@@ -28,6 +28,7 @@ export const CV = () => {
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Berufserfahrung'}
+              {/*{'Career history'}*/}
             </Typography>
             <WorkExperience />
           </div>
@@ -36,6 +37,7 @@ export const CV = () => {
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Ausbildung'}
+              {/*{'Education'}*/}
             </Typography>
             <Education />
           </div>
@@ -52,6 +54,7 @@ export const CV = () => {
           <div className={classes.section}>
             <Typography className={classes.sectionTitle}>
               {'Sprachen'}
+              {/*{'Languages'}*/}
             </Typography>
             <Languages />
           </div>

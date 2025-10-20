@@ -16,7 +16,8 @@ export const cvStyles = (theme: Theme): StyleRules =>
     },
     section: {
       width: '100%',
-      padding: theme.spacing()
+      padding: theme.spacing(),
+      marginBottom: theme.spacing(4)
     },
     sectionTitleContainer: {
       display: 'flex'

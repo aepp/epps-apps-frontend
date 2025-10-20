@@ -14,7 +14,8 @@ export const educationStyles = (theme: Theme): StyleRules =>
       flexDirection: 'column'
     },
     descriptionContainer: {
-      paddingLeft: theme.spacing()
+      paddingLeft: theme.spacing(),
+      marginBottom: theme.spacing(2)
     },
     institution: {
       textTransform: 'uppercase',

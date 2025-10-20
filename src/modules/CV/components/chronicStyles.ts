@@ -23,6 +23,9 @@ export const chronicStyles = (theme: Theme): StyleRules =>
       top: dotDim / 2,
       borderRadius: '50%'
     },
+    lastDot: {
+      top: 0
+    },
     currentDot: {
       background: theme.designScheme.periodActiveDotColor,
       top: 0

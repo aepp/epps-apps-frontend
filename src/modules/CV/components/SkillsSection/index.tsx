@@ -20,39 +20,48 @@ const JS_START_YEAR = 2013;
 const CSS_START_YEAR = 2013;
 const PHP_START_YEAR = 2013;
 const SPRING_BOOT_START_YEAR = 2020;
+const TYPESCRIPT_START_YEAR = 2022;
 
 const skills: Array<SkillItemType> = [
   {
     type: 'react',
     level: 85,
     label: `> ${currentYear - REACT_START_YEAR} Jahre`
+    // label: `> ${currentYear - REACT_START_YEAR} years`
   },
   {
     type: 'js',
     level: 85,
     label: `> ${currentYear - JS_START_YEAR} Jahre`
+    // label: `> ${currentYear - JS_START_YEAR} years`
   },
   {
     type: 'css',
     level: 65,
     label: `> ${currentYear - CSS_START_YEAR} Jahre`
+    // label: `> ${currentYear - CSS_START_YEAR} years`
   },
   {
     type: 'ts',
     level: 20,
-    label: '< 1 Jahr'
+    // label: '< 1 Jahr'
+    label:
+      currentYear - TYPESCRIPT_START_YEAR > 0
+        ? `> ${currentYear - TYPESCRIPT_START_YEAR} Jahre`
+        : '< 1 Jahr'
+    // label: currentYear - TYPESCRIPT_START_YEAR > 0 ? `> ${currentYear - TYPESCRIPT_START_YEAR} years` : '< 1 year'
   },
   {
     type: 'php',
     level: 75,
     label: `> ${currentYear - PHP_START_YEAR} Jahre`
+    // label: `> ${currentYear - PHP_START_YEAR} years`
   },
   {
     type: 'spring-boot',
     level: 30,
-    label:
-      `> ${currentYear - SPRING_BOOT_START_YEAR} Jahr` +
-      (currentYear - SPRING_BOOT_START_YEAR > 1 ? 'e' : '')
+    label: `> ${currentYear - SPRING_BOOT_START_YEAR} Jahre`
+    // label: `> ${currentYear - SPRING_BOOT_START_YEAR} years`
   }
 ];
 

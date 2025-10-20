@@ -70,7 +70,8 @@ export const designSchemeRetro: DesignSchemeType = {
     display: 'flex',
     justifyContent: 'center',
     textTransform: 'uppercase',
-    marginBottom: defaultTheme.spacing(2),
+    // marginBottom: defaultTheme.spacing(2),
+    marginBottom: defaultTheme.spacing(4),
     padding: defaultTheme.spacing(),
     borderRadius: '20% 0% 20% 25% / 100% 0% 100% 0%'
   },

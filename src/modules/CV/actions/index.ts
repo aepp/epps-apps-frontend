@@ -45,11 +45,26 @@ export const downloadCV = (): ThunkAction<any, any, any, any> => async (
       const imgData = canvas.toDataURL('image/png');
       const pdf = new JSPDF('p', 'mm', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight =
+      const contentHeight =
         (cvContainer.offsetHeight * pdfWidth) / cvContainer.offsetWidth;
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+
+      // console.log('content height', contentHeight);
+      // console.log('pdf height', pdf.internal.pageSize.getHeight());
+
       pdf.setFillColor(designScheme.background.default as string);
-      pdf.rect(0, 0, pdfWidth, pdf.internal.pageSize.getHeight(), 'F');
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
+      pdf.rect(0, 0, pdfWidth, pdfHeight + 2, 'F');
+      // pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, contentHeight, '', 'FAST');
+      pdf.addImage(
+        imgData,
+        'PNG',
+        0,
+        (pdfHeight - contentHeight) / 2,
+        pdfWidth,
+        contentHeight,
+        '',
+        'FAST'
+      );
       pdf.save('cv.pdf', {returnPromise: true});
     });
   return dispatch({type: FINISH_CV_DOWNLOAD});

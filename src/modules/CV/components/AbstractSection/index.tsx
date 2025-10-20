@@ -34,7 +34,7 @@ export default function Abstract() {
             {'Aleksandr Epp'}
           </Typography>
           <div className={classes.about}>
-            <Typography>Software developer (Fullstack, UX)</Typography>
+            <Typography>Software Developer (Fullstack, UX)</Typography>
           </div>
         </Grid>
         <Grid item xs={12} lg={7} className={classes.contactContainer}>

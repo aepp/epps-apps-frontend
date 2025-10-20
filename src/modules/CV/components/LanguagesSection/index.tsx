@@ -31,12 +31,14 @@ export const Languages = () => {
       <Grid item container spacing={2}>
         <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>{'Deutsch'}</Typography>
+          {/*<Typography className={classes.languageLabel}>{'German'}</Typography>*/}
           <div className={classes.circleProgressContainer}>
             <RadialProgress {...radialProgressProps} step={10} />
             {/* @ts-ignore */}
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>
                 {'Muttersprache'}
+                {/*{'Native'}*/}
               </Typography>
             </Hidden>
             {/* @ts-ignore */}
@@ -50,6 +52,7 @@ export const Languages = () => {
         <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Russisch'}
+            {/*{'Russian'}*/}
           </Typography>
           <div className={classes.circleProgressContainer}>
             <RadialProgress {...radialProgressProps} step={10} />
@@ -57,6 +60,7 @@ export const Languages = () => {
             <Hidden mdDown>
               <Typography className={classes.languageLevelText}>
                 {'Muttersprache'}
+                {/*{'Native'}*/}
               </Typography>
             </Hidden>
             {/* @ts-ignore */}
@@ -70,6 +74,7 @@ export const Languages = () => {
         <Grid item sm={4} xs={12} className={classes.skillContainer}>
           <Typography className={classes.languageLabel}>
             {'Englisch'}
+            {/*{'English'}*/}
           </Typography>
           <div className={classes.circleProgressContainer}>
             <RadialProgress {...radialProgressProps} step={7} />
@@ -77,6 +82,7 @@ export const Languages = () => {
               gute
               <br />
               Kenntnisse
+              {/*Good*/}
             </Typography>
           </div>
         </Grid>

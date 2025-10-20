@@ -33,6 +33,9 @@ export const App: React.FunctionComponent = () => {
     mixins: {
       ...defaultTheme.mixins
     }
+    // typography:{
+    //   fontSize: 18
+    // }
   } as ThemeOptions;
 
   const theme = createTheme(themeOptionsWithDesign);
