@@ -40,10 +40,11 @@ export default function WorkExperience() {
             <span>Tech-Stack:</span>
             <span className={classes.techStack}>
               <Skill chip className={classes.skill} type={'react'} />
-              <Skill chip className={classes.skill} type={'javascript'} />
+              <Skill chip className={classes.skill} type={'angular'} />
               <Skill chip className={classes.skill} type={'typescript'} />
-              <Skill chip className={classes.skill} type={'jakarta'} />
               <Skill chip className={classes.skill} type={'spring-boot'} />
+              <Skill chip className={classes.skill} type={'quarkus'} />
+              <Skill chip className={classes.skill} type={'java'} />
             </span>
           </Typography>
         </Grid>
@@ -71,11 +72,8 @@ export default function WorkExperience() {
             <span>Tech-Stack:</span>
             <span className={classes.techStack}>
               <Skill chip className={classes.skill} type={'react'} />
-              <Skill chip className={classes.skill} type={'javascript'} />
-              <Skill chip className={classes.skill} type={'css'} />
-              <Skill chip className={classes.skill} type={'php'} />
-              <Skill chip className={classes.skill} type={'wordpress'} />
-              <Skill chip className={classes.skill} type={'mysql'} />
+              <Skill chip className={classes.skill} type={'typescript'} />
+              <Skill chip className={classes.skill} type={'java'} />
             </span>
           </Typography>
         </Grid>

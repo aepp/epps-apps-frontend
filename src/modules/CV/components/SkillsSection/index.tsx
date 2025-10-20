@@ -1,9 +1,9 @@
-import React from 'react';
-import {makeStyles, Theme, useTheme} from '@material-ui/core/styles';
-import {Grid} from '@material-ui/core';
-import Skill, {SkillType} from '../Skill';
-import StaticLinearProgress from '../StaticLinearProgress';
-import styles from './styles';
+import React from "react";
+import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
+import Skill, { SkillType } from "../Skill";
+import StaticLinearProgress from "../StaticLinearProgress";
+import styles from "./styles";
 
 const useStyles = makeStyles(styles);
 
@@ -15,53 +15,39 @@ interface SkillItemType {
 
 const currentYear = new Date().getFullYear();
 
-const REACT_START_YEAR = 2018;
-const JS_START_YEAR = 2013;
-const CSS_START_YEAR = 2013;
-const PHP_START_YEAR = 2013;
-const SPRING_BOOT_START_YEAR = 2020;
-const TYPESCRIPT_START_YEAR = 2022;
+const MAX_SKILL_YEARS = 8;
 
+const REACT_START_YEAR = 2018;
+const ANGULAR_START_YEAR = 2023;
+const JS_START_YEAR = 2013;
+const TYPESCRIPT_START_YEAR = 2022;
+const JAVA_START_YEAR = 2020;
+
+const getLabelAndLevelFromStartYear = (startYear: number) => {
+  const years = currentYear - startYear;
+  return { label: `> ${years} Jahre`, level: years > MAX_SKILL_YEARS ? 90 : years * 10 };
+  // return `> ${years} years`;
+};
 const skills: Array<SkillItemType> = [
   {
-    type: 'react',
-    level: 85,
-    label: `> ${currentYear - REACT_START_YEAR} Jahre`
-    // label: `> ${currentYear - REACT_START_YEAR} years`
+    type: "react",
+    ...getLabelAndLevelFromStartYear(REACT_START_YEAR)
   },
   {
-    type: 'js',
-    level: 85,
-    label: `> ${currentYear - JS_START_YEAR} Jahre`
-    // label: `> ${currentYear - JS_START_YEAR} years`
+    type: "angular",
+    ...getLabelAndLevelFromStartYear(ANGULAR_START_YEAR)
   },
   {
-    type: 'css',
-    level: 65,
-    label: `> ${currentYear - CSS_START_YEAR} Jahre`
-    // label: `> ${currentYear - CSS_START_YEAR} years`
+    type: "js",
+    ...getLabelAndLevelFromStartYear(JS_START_YEAR)
   },
   {
-    type: 'ts',
-    level: 20,
-    // label: '< 1 Jahr'
-    label:
-      currentYear - TYPESCRIPT_START_YEAR > 0
-        ? `> ${currentYear - TYPESCRIPT_START_YEAR} Jahre`
-        : '< 1 Jahr'
-    // label: currentYear - TYPESCRIPT_START_YEAR > 0 ? `> ${currentYear - TYPESCRIPT_START_YEAR} years` : '< 1 year'
+    type: "ts",
+    ...getLabelAndLevelFromStartYear(TYPESCRIPT_START_YEAR)
   },
   {
-    type: 'php',
-    level: 75,
-    label: `> ${currentYear - PHP_START_YEAR} Jahre`
-    // label: `> ${currentYear - PHP_START_YEAR} years`
-  },
-  {
-    type: 'spring-boot',
-    level: 30,
-    label: `> ${currentYear - SPRING_BOOT_START_YEAR} Jahre`
-    // label: `> ${currentYear - SPRING_BOOT_START_YEAR} years`
+    type: "java",
+    ...getLabelAndLevelFromStartYear(JAVA_START_YEAR)
   }
 ];
 
@@ -80,7 +66,7 @@ export const Skills: React.FunctionComponent = () => {
             key={skill.type}
           >
             <div className={classes.skillLabel}>
-              <Skill type={skill.type} labelBefore chip />
+              <Skill type={skill.type} labelBefore chip/>
             </div>
             <StaticLinearProgress
               value={skill.level}

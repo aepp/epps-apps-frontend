@@ -1,13 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Chip, makeStyles} from '@material-ui/core';
-import {DESIGN_SCHEME_ID_RETRO} from '../../../../theme/retro';
 import {getCurrentDesignSchemeId} from '../../../App/reducers';
-import styles from './styles';
 import reactIcon from './icons/react.png';
+import angularIcon from './icons/angular.png';
 import javascriptIcon from './icons/js.png';
 import typescriptIcon from './icons/ts.png';
 import cssIcon from './icons/css.png';
+import javaEeIcon from './icons/java-ee.png';
 import javaIcon from './icons/java.png';
 import muiIcon from './icons/mui.png';
 import mysqlIcon from './icons/mysql.png';
@@ -21,6 +21,8 @@ import springBootIcon from './icons/spring.png';
 import jakartaEeIcon from './icons/jakarta-ee.png';
 import dockerIcon from './icons/docker.png';
 import gitlabCiCdIcon from './icons/gitlab.png';
+import quarkusIcon from './icons/quarkus.png';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -33,6 +35,8 @@ export const getSkill = (type: SkillType): SkillObjectType => {
   switch (type) {
     case 'react':
       return {label: 'React', logo: reactIcon};
+    case 'angular':
+      return {label: 'Angular', logo: angularIcon};
     case 'js':
     case 'javascript':
       return {label: 'Javascript', logo: javascriptIcon};
@@ -41,8 +45,10 @@ export const getSkill = (type: SkillType): SkillObjectType => {
       return {label: 'TypeScript', logo: typescriptIcon};
     case 'css':
       return {label: 'CSS', logo: cssIcon};
+    case 'java-ee':
+      return {label: 'Java EE', logo: javaEeIcon};
     case 'java':
-      return {label: 'Java EE', logo: javaIcon};
+      return {label: 'Java', logo: javaIcon};
     case 'jakarta':
       return {label: 'Jakarta EE', logo: jakartaEeIcon};
     case 'mui':
@@ -69,6 +75,8 @@ export const getSkill = (type: SkillType): SkillObjectType => {
       return {label: 'Docker', logo: dockerIcon};
     case 'gitlab':
       return {label: 'Gitlab CI/CD', logo: gitlabCiCdIcon};
+    case 'quarkus':
+      return {label: 'Quarkus', logo: quarkusIcon};
     default:
       throw new Error('Invalid skill type');
   }
@@ -76,12 +84,14 @@ export const getSkill = (type: SkillType): SkillObjectType => {
 
 export type SkillType =
   | 'react'
+  | 'angular'
   | 'js'
   | 'javascript'
   | 'ts'
   | 'typescript'
   | 'css'
   | 'java'
+  | 'java-ee'
   | 'jakarta'
   | 'mui'
   | 'material-ui'
@@ -95,7 +105,8 @@ export type SkillType =
   | 'webpack'
   | 'spring-boot'
   | 'docker'
-  | 'gitlab';
+  | 'gitlab'
+  | 'quarkus';
 
 type ClassesTypes = {
   root?: string;

@@ -77,7 +77,7 @@ export const Languages = () => {
             {/*{'English'}*/}
           </Typography>
           <div className={classes.circleProgressContainer}>
-            <RadialProgress {...radialProgressProps} step={7} />
+            <RadialProgress {...radialProgressProps} step={8} />
             <Typography className={classes.languageLevelText} component={'div'}>
               gute
               <br />

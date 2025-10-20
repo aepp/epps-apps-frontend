@@ -21,7 +21,7 @@ const tools = [
     size: toolSizes.row1
   },
   {
-    type: 'redux-saga',
+    type: 'angular',
     size: toolSizes.row1
   },
   {

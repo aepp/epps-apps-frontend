@@ -1,13 +1,13 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import {
   MailOutline as MailIcon,
   PhoneOutlined as PhoneIcon
-} from '@material-ui/icons';
-import {Grid, Typography, useTheme} from '@material-ui/core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTwitter, faGithubAlt} from '@fortawesome/free-brands-svg-icons';
-import styles from './styles';
+} from "@material-ui/icons";
+import { Grid, Typography, useTheme } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStackOverflow, faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+import styles from "./styles";
 
 const useStyles = makeStyles(styles);
 
@@ -27,11 +27,11 @@ export default function Abstract() {
     <div className={classes.root}>
       <Grid item container spacing={2}>
         <Grid item xs={12} className={classes.avatarContainer}>
-          <div className={classes.avatar} />
+          <div className={classes.avatar}/>
         </Grid>
         <Grid item xs={12} className={classes.nameAndJob}>
-          <Typography variant={'h4'} className={classes.name}>
-            {'Aleksandr Epp'}
+          <Typography variant={"h4"} className={classes.name}>
+            {"Aleksandr Epp"}
           </Typography>
           <div className={classes.about}>
             <Typography>Software Developer (Fullstack, UX)</Typography>
@@ -43,10 +43,10 @@ export default function Abstract() {
           </div>
           <Typography className={classes.contactLabelContainer}>
             <a
-              href={'mailto:info@epps-apps.com'}
+              href={"mailto:info@epps-apps.com"}
               className={classes.contactLabel}
             >
-              {'info@epps-apps.com'}
+              {"info@epps-apps.com"}
             </a>
           </Typography>
         </Grid>
@@ -60,10 +60,11 @@ export default function Abstract() {
           </div>
           <Typography className={classes.contactLabelContainer}>
             <a
-              href={'https://github.com/aepp'}
+              target={"_blank"}
+              href={"https://github.com/aepp"}
               className={classes.contactLabel}
             >
-              {'aepp'}
+              {"aepp"}
             </a>
           </Typography>
         </Grid>
@@ -72,25 +73,26 @@ export default function Abstract() {
             <PhoneIcon {...svgIconProps} />
           </div>
           <Typography className={classes.contactLabelContainer}>
-            <a href={'tel:+491727026981'} className={classes.contactLabel}>
-              {'+49 172 702 698 1'}
+            <a href={"tel:+491727026981"} className={classes.contactLabel}>
+              {"+49 172 702 698 1"}
             </a>
           </Typography>
         </Grid>
         <Grid item xs={12} lg={5} className={classes.contactContainer}>
           <div className={classes.contactIconContainer}>
             <FontAwesomeIcon
-              icon={faTwitter}
+              icon={faStackOverflow}
               {...svgIconProps}
               color={theme.designScheme.contactItem.icon.fill}
             />
           </div>
           <Typography className={classes.contactLabelContainer}>
             <a
-              href={'https://twitter.com/aleksandr_epp'}
+              target={"_blank"}
+              href={"https://stackoverflow.com/users/3382598/aleksandr-epp"}
               className={classes.contactLabel}
             >
-              {'aleksandr_epp'}
+              {"aleksandr-epp"}
             </a>
           </Typography>
         </Grid>
